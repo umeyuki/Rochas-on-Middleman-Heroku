@@ -27,7 +27,7 @@ end
 
 page "/feed.xml", :layout => false
 
-### 
+###
 # Compass
 ###
 
@@ -44,14 +44,31 @@ page "/feed.xml", :layout => false
 # Page options, layouts, aliases and proxies
 ###
 
+# Slim settings
+# Set slim-lang output style
+Slim::Engine.set_default_options :pretty => true
+# Set Shortcut
+Slim::Engine.set_default_options :shortcut => {
+  '#' => {:tag => 'div', :attr => 'id'},
+  '.' => {:tag => 'div', :attr => 'class'},
+  '&' => {:tag => 'input', :attr => 'type'}
+}
+
+# Markdown settings
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :with_toc_data => true, :smartypants => true
+set :markdown_engine, :redcarpet
+
+# Middleman-Syntax Extention
+activate :syntax
+
 # Per-page layout changes:
-# 
+#
 # With no layout
 # page "/path/to/file.html", :layout => false
-# 
+#
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
-# 
+#
 # A path which all have the same layout
 # with_layout :admin do
 #   page "/admin/*"
@@ -68,6 +85,9 @@ page "/feed.xml", :layout => false
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
+
+# Reload the browser automatically whenever files change
+activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -86,21 +106,21 @@ set :images_dir, 'images'
 configure :build do
   # For example, change the Compass output style for deployment
   # activate :minify_css
-  
+
   # Minify Javascript on build
   # activate :minify_javascript
-  
+
   # Enable cache buster
   # activate :cache_buster
-  
+
   # Use relative URLs
   # activate :relative_assets
-  
+
   # Compress PNGs after build
   # First: gem install middleman-smusher
   # require "middleman-smusher"
   # activate :smusher
-  
+
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
