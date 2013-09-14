@@ -1,0 +1,83 @@
+/*  ========================================================================== */
+/*  @group Layout */
+/*  ========================================================================== */
+    body {
+        border-top: medium solid $color-text;
+    }
+/*  ========================================================================== */
+/*  @group Layout Helpers */
+/*  ========================================================================== */
+
+    // * { @include box-sizing(border-box); }
+
+    @mixin l-constrained() {
+        width: 95%;
+        max-width: 840px;
+        margin: 0 auto;
+
+
+   
+
+
+    }
+
+    .l-constrained {
+        @include l-constrained();
+    }
+
+/*  ========================================================================== */
+/*  @group Header */
+/*  ========================================================================== */
+
+    [role="banner"] {
+        // background-color: darken( $color-background, 10% );
+            margin-bottom: 8em;
+    }
+
+        .branding {}
+        .branding-logo {
+            @include font-size( 65 );
+            font-weight: bold;
+            font-family: 'Alegreya', serif;
+            text-align: center;
+
+        }
+
+
+/*  ========================================================================== */
+/*  @group Main */
+/*  ========================================================================== */
+
+    // * { @include box-sizing(border-box); }
+
+    @mixin main() {
+
+
+        @media only screen and (min-width: $breakpoint-narrow) {
+     
+
+        }
+
+    }
+
+    [role="main"] {
+        @include main();
+    }
+    [role="complementary"] {
+
+    }
+
+/*  ========================================================================== */
+/*  @group Footer */
+/*  ========================================================================== */
+
+    [role="contentinfo"] {
+
+      clear: both;
+      @include font-size( 13 );
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+      padding-top: .5em;
+      border-top: 1px solid darken( $color-background, 15% );
+
+    }

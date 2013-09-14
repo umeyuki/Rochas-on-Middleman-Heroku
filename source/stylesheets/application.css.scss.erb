@@ -1,4 +1,4 @@
-@charset "utf-8";
+<%= Rouge::Themes::ThankfulEyes.render(:scope => '.highlight') %>
 
 // Compass Plugins
 // ===============
@@ -9,7 +9,7 @@
 // Sass Features
 // =============
 
-@import "variables", "functions", "mixins","state";
+@import "variables", "functions", "mixins";
 
 
 // The Styles
@@ -27,5 +27,4 @@
 // - State  = a state is something that augments + overrides all other styles, e.g., success or error state
 
 @import "layouts/layout";
-@import "module/hue";
 

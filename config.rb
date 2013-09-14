@@ -5,26 +5,27 @@
 # Time.zone = "UTC"
 
 activate :blog do |blog|
-  # blog.prefix = "blog"
-  # blog.permalink = ":year/:month/:day/:title.html"
+  Time.zone = "Tokyo"
+  blog.prefix = "blog"
+  blog.permalink = ":year/:month/:day/:title.html"
   # blog.sources = ":year-:month-:day-:title.html"
   # blog.taglink = "tags/:tag.html"
-  # blog.layout = "layout"
+  blog.layout = "layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = ":year.html"
   # blog.month_link = ":year/:month.html"
   # blog.day_link = ":year/:month/:day.html"
   # blog.default_extension = ".markdown"
-
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
-
+  blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   # blog.paginate = true
   # blog.per_page = 10
   # blog.page_link = "page/:num"
 end
 
+page "blog/*", :layout => :article_layout
 page "/feed.xml", :layout => false
 
 ###
@@ -55,11 +56,11 @@ Slim::Engine.set_default_options :shortcut => {
 }
 
 # Markdown settings
-set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :with_toc_data => true, :smartypants => true
 set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 # Middleman-Syntax Extention
-activate :syntax
+activate :rouge_syntax
 
 # Per-page layout changes:
 #
@@ -97,9 +98,7 @@ activate :livereload
 # end
 
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
 # Build-specific configuration

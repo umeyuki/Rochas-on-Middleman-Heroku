@@ -17,7 +17,7 @@
 /*  ========================================================================== */
 
     body {
-        font: $font-weight-normal #{$base-fs/16*100}%/($base-lh/$base-fs) sans-serif;
+        font: $font-weight-normal #{$base-fs/16*100}%/($base-lh/$base-fs);
     }
 
     /* Default font stack */
@@ -50,12 +50,7 @@
 
         h1, h2, h3, h4, h5, h6 {
             font-style: normal;
-        }
-        h1, h2, h3 {
-            font-weight: $font-weight-semibold;
-        }
-        h4, h5, h6 {
-            font-weight: $font-weight-normal;
+            font-weight: normal;
         }
 
         h1 { font-size: rs(32); margin: 0 0 rs(21,32) 0; }
@@ -72,7 +67,7 @@
         a {
             text-decoration: none;
             word-wrap: break-word;
-            font-weight: bold;
+    
         }
         a:focus { outline: thin dotted; }
         a:hover, a:active { outline: 0; }
@@ -206,7 +201,7 @@
             color: $color-pre;
             background-color: $color-pre-background;
             margin-bottom: rs($base-lh/2);
-            padding: 1em rs($base-lh);
+            padding: rs($base-lh/2) rs($base-lh);
         }
         pre code, .code code {
             background-color: transparent;

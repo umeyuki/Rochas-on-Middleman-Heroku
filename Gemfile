@@ -17,5 +17,11 @@ gem "redcarpet", "~> 3.0.0"
 # Middleman-Syntax
 gem "middleman-syntax", "~> 1.2.1"
 
+# Nokogiri
+gem "nokogiri", "~> 1.6.0"
+
+# middleman-rouge
+gem "middleman-rouge", "~> 0.0.1"
+
 # Slim
 gem "slim", "~> 2.0.1"

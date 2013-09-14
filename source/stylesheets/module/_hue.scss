@@ -1,0 +1,75 @@
+/*  ========================================================================== */
+/*  @Hue Modules */
+/*  ========================================================================== */
+body {
+  -webkit-animation: hue-animation 20s ease 0s infinite alternate;
+  -moz-animation: hue-animation 20s ease 0s infinite alternate;
+}
+    /* body {
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+    }
+    body {
+      -webkit-animation-delay: 2s;
+      -moz-animation-delay: 2s;
+    }
+    body {
+      -webkit-animation-delay: 4s;
+      -moz-animation-delay: 4s;
+    }
+    body {
+      -webkit-animation-delay: 6s;
+      -moz-animation-delay: 6s;
+    } */
+
+@-webkit-keyframes hue-animation {
+  0% {
+    border-color: $hue-blue;
+  }
+
+  20% {
+    border-color: $hue-purple;
+  }
+
+  40% {
+    border-color: $hue-red;
+  }
+
+  60% {
+    border-color: $hue-orange;
+  }
+
+  80% {
+    border-color: $hue-yellow;
+  }
+
+  100% {
+    border-color: $hue-gleen;
+  }
+}
+
+@-moz-keyframes hue-animation {
+  0% {
+    border-color: $hue-blue;
+  }
+
+  20% {
+    border-color: $hue-purple;
+  }
+
+  40% {
+    border-color: $hue-red;
+  }
+
+  60% {
+    border-color: $hue-orange;
+  }
+
+  80% {
+    border-color: $hue-yellow;
+  }
+
+  100% {
+    border-color: $hue-gleen;
+  }
+}
