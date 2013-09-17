@@ -40,14 +40,8 @@ $color-warning: #cf8600;
 $color-important: #d00;
 $color-notice: #66b;
 
-// Hue
-$hue-blue: #5496CC;
-$hue-purple: #8B80BD;
-$hue-red: #DF6561;
-$hue-orange: #F3C759;
-$hue-yellow: #FFEE55;
-$hue-gleen: #98D257;
-
+// Hsl
+$color-hsl: hsl(120deg, 80%, 88%);
 
 // Base Sizes
 // ==========
@@ -67,7 +61,7 @@ $font-family-sans: sans-serif;
 $font-family-serif: Georgia, serif;
 $font-family-display: "Helvetica Neue",Helvetica,Arial,sans-serif;
 $font-family-caption: Verdana, sans-serif;
-$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-monospace: 'Source Code Pro', Consolas, "Liberation Mono", Courier, monospace;
 $font-family-default: $font-family-display;
 
 

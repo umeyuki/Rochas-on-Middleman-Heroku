@@ -1,3 +1,5 @@
 - wrap_layout :layout do
+  h2
+    = link_to current_article.title, current_article.url
   article
     = yield

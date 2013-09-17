@@ -81,6 +81,7 @@
         a:hover {
             cursor: pointer;
             color: $color-link-hover;
+            color: lighten( $color-text, 40% );
         }
         a:active {
             color: $color-link-active;

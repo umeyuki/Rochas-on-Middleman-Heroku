@@ -1,7 +1,7 @@
 /*  ========================================================================== */
 /*  @Hue Modules */
 /*  ========================================================================== */
-body {
+body, footer {
   -webkit-animation: hue-animation 20s ease 0s infinite alternate;
   -moz-animation: hue-animation 20s ease 0s infinite alternate;
 }
@@ -24,52 +24,52 @@ body {
 
 @-webkit-keyframes hue-animation {
   0% {
-    border-color: $hue-blue;
+    border-color: adjust-hue($color-hsl, 0);
   }
 
   20% {
-    border-color: $hue-purple;
+    border-color: adjust-hue($color-hsl, 72);
   }
 
   40% {
-    border-color: $hue-red;
+    border-color: adjust-hue($color-hsl, 144);
   }
 
   60% {
-    border-color: $hue-orange;
+    border-color: adjust-hue($color-hsl, 216);
   }
 
   80% {
-    border-color: $hue-yellow;
+    border-color: adjust-hue($color-hsl, 288);
   }
 
   100% {
-    border-color: $hue-gleen;
+    border-color: adjust-hue($color-hsl, 360);
   }
 }
 
 @-moz-keyframes hue-animation {
   0% {
-    border-color: $hue-blue;
+    border-color: adjust-hue($color-hsl, 0);
   }
 
   20% {
-    border-color: $hue-purple;
+    border-color: adjust-hue($color-hsl, 72);
   }
 
   40% {
-    border-color: $hue-red;
+    border-color: adjust-hue($color-hsl, 144);
   }
 
   60% {
-    border-color: $hue-orange;
+    border-color: adjust-hue($color-hsl, 216);
   }
 
   80% {
-    border-color: $hue-yellow;
+    border-color: adjust-hue($color-hsl, 288);
   }
 
   100% {
-    border-color: $hue-gleen;
+    border-color: adjust-hue($color-hsl, 360);
   }
 }

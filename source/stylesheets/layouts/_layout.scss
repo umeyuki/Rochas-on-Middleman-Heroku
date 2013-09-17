@@ -10,19 +10,20 @@
 
     // * { @include box-sizing(border-box); }
 
-    @mixin l-constrained() {
+    @mixin l-content() {
+
         width: 95%;
         max-width: 840px;
         margin: 0 auto;
 
-
-   
-
+        @media only screen and (min-width: $breakpoint-narrow) {
+            width: 90%;
+        }
 
     }
 
-    .l-constrained {
-        @include l-constrained();
+    .l-content {
+        @include l-content();
     }
 
 /*  ========================================================================== */
@@ -31,17 +32,28 @@
 
     [role="banner"] {
         // background-color: darken( $color-background, 10% );
-            margin-bottom: 8em;
+      
     }
 
-        .branding {}
-        .branding-logo {
-            @include font-size( 65 );
-            font-weight: bold;
-            font-family: 'Alegreya', serif;
+        .logo {
+            @include font-size( 18 );
+            letter-spacing: 0.5em;
             text-align: center;
-
+            width: 280px;
+            margin: 0 auto 3em auto;
+            
         }
+        .site-name {
+            @include font-size( 64 );
+            font-weight: bold;
+            display: block;
+        }
+        .sns {
+          @include font-size( 20 );
+          letter-spacing: 0.9em;
+          text-align: right;
+        }
+
 
 
 /*  ========================================================================== */
@@ -51,12 +63,7 @@
     // * { @include box-sizing(border-box); }
 
     @mixin main() {
-
-
-        @media only screen and (min-width: $breakpoint-narrow) {
      
-
-        }
 
     }
 
@@ -74,10 +81,10 @@
     [role="contentinfo"] {
 
       clear: both;
-      @include font-size( 13 );
+      @include font-size( 14 );
       margin-top: 1.5em;
       margin-bottom: 1em;
       padding-top: .5em;
-      border-top: 1px solid darken( $color-background, 15% );
+      border-top: 1px solid $color-text;
 
     }

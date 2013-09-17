@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Code+Pro"
+    == stylesheet_link_tag "application"
+    == stylesheet_link_tag "highlight"
+  body
+    .l-constrained
+      header[role="banner"]
+        .sns
+          i.icon-twitter
+          i.icon-github
+          i.icon-rss
+        h1.logo
+          a href="" rel="home"
+            span.site-name 2
+            | DRESS CORDING
+      section.l-content
+        main[role="main"]
+          = yield
+        aside
+          h2
+            | Recent Articles
+          ol
+            - blog.articles[0...10].each do |article|
+              li
+                = link_to article.title, article
+                span
+                  = article.date.strftime('%b %e')
+          h2
+            | Tags
+          ol
+            - blog.tags.each do |tag, articles|
+              li
+                = link_to tag, tag_path(tag)
+                |  (
+                = articles.size
+                | )
+          h2
+            | By Year
+          ol
+            - blog.articles.group_by { |a| a.date.year }.each do |year, articles|
+              li
+                = link_to year, blog_year_path(year)
+                |  (
+                = articles.size
+                | )
+      footer[role="contentinfo"] 
+        p
+          small
+            | This site is licensed under a
+            a< href="http://creativecommons.org/licenses/by/3.0/" Attribution 3.0 Unported (CC BY 3.0)</a> License.
+
