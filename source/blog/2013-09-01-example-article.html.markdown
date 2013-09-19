@@ -2,6 +2,7 @@
 title: Middlemanでブログをつくろう
 date: 2013-09-01
 tags: Middleman, Rails
+layout: article_layout
 ---
 ### 1. Middlemantとは
 

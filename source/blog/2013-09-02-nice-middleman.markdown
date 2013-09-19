@@ -2,6 +2,7 @@
 title: ブログをリプロデュースしました
 date: 2013-09-02
 tags: Test
+layout: article_layout
 ---
 
 * Middleman

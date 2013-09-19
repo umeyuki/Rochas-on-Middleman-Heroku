@@ -6,7 +6,7 @@
 
 activate :blog do |blog|
   Time.zone = "Tokyo"
-  # blog.prefix = "blog"
+  blog.prefix = "blog"
   blog.permalink = ":title.html"
   # blog.sources = ":year-:month-:day-:title.html"
   blog.taglink = "tags/:tag.html"
