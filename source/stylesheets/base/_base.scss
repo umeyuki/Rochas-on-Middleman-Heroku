@@ -17,7 +17,8 @@
 /*  ========================================================================== */
 
     body {
-        font: $font-weight-normal #{$base-fs/16*100}%/($base-lh/$base-fs);
+        font: $font-weight-normal #{$base-fs/16*100};
+        line-height: $base-lh/$base-fs;
     }
 
     /* Default font stack */
@@ -199,6 +200,7 @@
             background-color: $color-code-background;
         }
         pre, .code {
+            @include font-size( 15 );
             color: $color-pre;
             background-color: $color-pre-background;
             margin-bottom: rs($base-lh/2);

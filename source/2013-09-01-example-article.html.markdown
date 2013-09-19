@@ -2,12 +2,12 @@
 title: Middlemanでブログをつくろう
 date: 2013-09-01
 tags: Middleman, Rails
+layout: article_layout
 ---
-# Middlemanでブログをつくろう
+### 1. Middlemantとは
 
-## 1. Middlemantとは  
 
-## 2. Middleman-Blogのインストール
+### 2. Middleman-Blogのインストール
 ```sh
 $ gem install middleman
 $ middleman init rochas --template=blog
@@ -15,7 +15,7 @@ $ middleman init rochas --template=blog
 ターミナルから必要な機能のGemをインストール → config.rbに設定を書く。これを繰り返していくことがカスタマイズの基本的な方法になります。
 管理画面は存在せず、黒い画面からつくっていくのです。
 
-## 3. ERBからSlimに変更
+### 3. ERBからSlimに変更
 ```sh
 $ gem install slim
 ```
@@ -43,7 +43,7 @@ $ erb2slim index.html.erb index.html.slim
 ```
 [slim-template/html2slim](https://github.com/slim-template/html2slim)
 
-## 4. 記事をGithubフレーバーのMarkdownで書いてみよう
+### 4. 記事をGithubフレーバーのMarkdownで書いてみよう
 MiddlemanはデフォルトでMarkdownが使えるのですが、Markdownエンジンにも色々あるみたい。Github風味で記述できるようにしたかったので、デフォルトのKramdownから[Redcarpet](https://github.com/vmg/redcarpet) に変更してみます。  
 Gemfileに以下を記述 → ターミナルからインストール → config.rbに設定を追記。
 
@@ -60,7 +60,7 @@ set :markdown_engine, :redcarpet
 ```
 [vmg/redcarpet](https://github.com/vmg/redcarpet) 
 
-## 5. Middleman-Syntax Extentionでソースコードをきれいにしてみよう
+### 5. Middleman-Syntax Extentionでソースコードをきれいにしてみよう
 ブログにはソースコードがつきもの。Middlemanのデフォルトにはないのですが、Middleman-Syntax Extentionが用意されていますのでそれをインストールしてみます。
 Gemfileに以下を記述 → ターミナルからインストール → config.rbに設定を追記。
 

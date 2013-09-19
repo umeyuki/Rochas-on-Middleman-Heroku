@@ -25,3 +25,7 @@ gem "middleman-rouge", "~> 0.0.1"
 
 # Slim
 gem "slim", "~> 2.0.1"
+
+# Heroku
+gem 'heroku'
+

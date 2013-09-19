@@ -6,13 +6,13 @@
 
 activate :blog do |blog|
   Time.zone = "Tokyo"
-  blog.prefix = "blog"
-  blog.permalink = ":year/:month/:day/:title.html"
+  # blog.prefix = "blog"
+  blog.permalink = ":title.html"
   # blog.sources = ":year-:month-:day-:title.html"
-  # blog.taglink = "tags/:tag.html"
+  blog.taglink = "tags/:tag.html"
   blog.layout = "layout"
   # blog.summary_separator = /(READMORE)/
-  # blog.summary_length = 250
+  blog.summary_length = 200
   # blog.year_link = ":year.html"
   # blog.month_link = ":year/:month.html"
   # blog.day_link = ":year/:month/:day.html"
@@ -21,11 +21,11 @@ activate :blog do |blog|
   blog.calendar_template = "calendar.html"
   blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
   # blog.paginate = true
-  # blog.per_page = 10
+  blog.per_page = 30
   # blog.page_link = "page/:num"
 end
 
-page "blog/*", :layout => :article_layout
+# page "blog/*", :layout => :article_layout
 page "/feed.xml", :layout => false
 
 ###
@@ -113,7 +113,7 @@ configure :build do
   # activate :cache_buster
 
   # Use relative URLs
-  activate :relative_assets
+  # activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher

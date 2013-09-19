@@ -3,7 +3,8 @@ title: Middlemanでブログをつくろう
 date: 2013-09-01
 tags: Middleman, Rails
 ---
-### 1. Middlemantとは  
+### 1. Middlemantとは
+
 
 ### 2. Middleman-Blogのインストール
 ```sh

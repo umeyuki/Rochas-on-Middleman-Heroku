@@ -13,7 +13,7 @@
     @mixin l-content() {
 
         width: 95%;
-        max-width: 840px;
+        max-width: 720px;
         margin: 0 auto;
 
         @media only screen and (min-width: $breakpoint-narrow) {
@@ -49,7 +49,7 @@
             display: block;
         }
         .sns {
-          @include font-size( 20 );
+          @include font-size( 18 );
           letter-spacing: 0.9em;
           text-align: right;
         }
