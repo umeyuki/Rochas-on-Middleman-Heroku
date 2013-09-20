@@ -12,12 +12,12 @@
 
     @mixin l-content() {
 
-        width: 95%;
+        width: 100%;
         max-width: 720px;
         margin: 0 auto;
 
-        @media only screen and (min-width: $breakpoint-narrow) {
-            width: 90%;
+        @media only screen and (max-width: $breakpoint-narrow) {
+            width: 95%;
         }
 
     }
@@ -41,7 +41,6 @@
             text-align: center;
             width: 280px;
             margin: 0 auto 3em auto;
-            
         }
         .site-name {
             @include font-size( 64 );
@@ -64,7 +63,6 @@
 
     @mixin main() {
      
-
     }
 
     [role="main"] {
@@ -80,7 +78,6 @@
 
     [role="contentinfo"] {
 
-      clear: both;
       @include font-size( 14 );
       margin-top: 1.5em;
       margin-bottom: 1em;
