@@ -1,7 +1,40 @@
-- wrap_layout :layout do
-  article
-    time
-      = current_article.date.strftime('%B %e, %Y')
-    h2
-      = current_article.title
-    = yield
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    title
+      = data.page.title
+      |  - 
+      = data.site.title
+    meta property="og:title" content= current_article.title
+    meta property="og:type" content="article"
+    meta property="og:url" content= current_article.url
+    meta property="og:description" content=""
+    meta property="og:locale" content="ja_JP"
+    meta property="og:site_name" content="Dress Cording"
+    meta property="fb:admins" content="100002871017327"
+    meta property="fb:app_id" content="151099311643297"
+    meta name="twitter:card" content="summary"
+    meta name="twitter:creator" content="@Rochas_"
+    == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Muli|Source+Code+Pro:300"
+    == stylesheet_link_tag "application"
+  body
+    header[role="banner"]
+      .sns
+        i.icon-twitter
+        i.icon-github
+        i.icon-rss
+      h1.logo
+        a href="" rel="home"
+          span.site-name 3
+          | DRESS CORDING
+    section.l-content
+      main[role="main"]
+        article
+          time
+            = current_article.date.strftime('%B %e, %Y')
+          h2
+            = current_article.title
+          = yield
+    = partial "footer"

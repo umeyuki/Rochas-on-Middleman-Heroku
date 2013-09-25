@@ -1,43 +1,63 @@
 /*  ========================================================================== */
 /*  @group Layout */
 /*  ========================================================================== */
-    body {
-        border-top: medium solid $color-text;
-    }
-/*  ========================================================================== */
-/*  @group Layout Helpers */
-/*  ========================================================================== */
 
-    // * { @include box-sizing(border-box); }
-
-    @mixin l-content() {
-
-        width: 100%;
-        max-width: 720px;
-        margin: 0 auto;
-
-        @media only screen and (max-width: $breakpoint-narrow) {
-            width: 95%;
+    @mixin l-wrapper() {
+        @media only screen and (min-width: $breakpoint-narrow) {
+            border-top: medium solid $color-text;
         }
 
     }
 
+    .l-wrapper {
+        @include l-wrapper();
+    }
+
+/*  ========================================================================== */
+/*  @group Layout Helpers */
+/*  ========================================================================== */
+
+    * { @include box-sizing(border-box); }
+
+    @mixin l-content() {
+        @media only screen and (max-width: $breakpoint-mid) {
+            width: 90%;
+            margin: auto;
+        }
+
+        @media only screen and (min-width: $breakpoint-mid) {
+            padding: 30px 25px 0 25px;
+            margin: 0 0 0 250px;
+        }
+    }
+
     .l-content {
         @include l-content();
+
+        section {
+            max-width: 740px;
+            margin: auto;
+        }
     }
 
 /*  ========================================================================== */
 /*  @group Header */
 /*  ========================================================================== */
 
-    [role="banner"] {
-        // background-color: darken( $color-background, 10% );
-      
+   @mixin l-header() {
+        background-color: darken( $color-background, 10% );
+
+        @media only screen and (min-width: $breakpoint-mid) {
+            width: 250px;
+            float: left;
+            clear: both;
+        }
     }
 
         .logo {
             @include font-size( 18 );
-            letter-spacing: 0.5em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
             text-align: center;
             width: 280px;
             margin: 0 auto 3em auto;
@@ -52,6 +72,10 @@
           letter-spacing: 0.9em;
           text-align: right;
         }
+
+    .l-header {
+        @include l-header();
+    }
 
 
 
@@ -77,11 +101,11 @@
 /*  ========================================================================== */
 
     [role="contentinfo"] {
-
+      clear: both;
+      margin: 0 auto;
       @include font-size( 14 );
-      margin-top: 1.5em;
-      margin-bottom: 1em;
-      padding-top: .5em;
-      border-top: 1px solid $color-text;
 
+        p {
+            text-align: right;
+        }
     }
