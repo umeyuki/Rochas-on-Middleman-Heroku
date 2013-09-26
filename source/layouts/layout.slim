@@ -20,19 +20,22 @@ html
     == stylesheet_link_tag "application"
     link href="/feed.xml" rel="alternate" title="Dress Cording" type="application/atom+xml"
   body
-    .l-wrapper.clearfix
-      header.l-header.clearfix[role="banner"]
-        .sns
-          i.icon-twitter
-          i.icon-github
-          i.icon-rss
+    .l-container
+      header.l-header[role="banner"]
         h1.logo
-          a href="" rel="home"
+          a href="#{data.site.url}" rel="home"
             span.site-name R
             | DRESS CORDING
+        nav.navigation-site
+          ul
+            li
+              a href='#{data.site.url}' Blog
+            li
+              a href='about' About
       .l-content
-        section.clearfix
+        section
           main[role="main"]
             = yield
-          = partial "footer"
+          = partial "navigation"
+      = partial "footer"
 

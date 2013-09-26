@@ -21,21 +21,24 @@ html
     == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Muli|Source+Code+Pro:300"
     == stylesheet_link_tag "application"
   body
-    header[role="banner"]
-      .sns
-        i.icon-twitter
-        i.icon-github
-        i.icon-rss
-      h1.logo
-        a href="" rel="home"
-          span.site-name 3
-          | DRESS CORDING
-    section.l-content
-      main[role="main"]
-        article
-          time
-            = current_article.date.strftime('%B %e, %Y')
-          h2
-            = current_article.title
-          = yield
+    .l-container
+      header.l-header[role="banner"]
+        .sns
+          i.icon-twitter
+          i.icon-github
+          i.icon-rss
+        h1.logo
+          a href="" rel="home"
+            span.site-name R
+            | DRESS CORDING
+      .l-content
+        section
+          main[role="main"]
+            article
+              time
+                = current_article.date.strftime('%B %e, %Y')
+              h2
+                = current_article.title
+              = yield
+          = partial "navigation"
     = partial "footer"

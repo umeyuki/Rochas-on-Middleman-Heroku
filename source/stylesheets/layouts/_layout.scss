@@ -2,19 +2,19 @@
 /*  @group Layout */
 /*  ========================================================================== */
 
-    @mixin l-wrapper() {
+    @mixin l-container() {
         @media only screen and (min-width: $breakpoint-narrow) {
             border-top: medium solid $color-text;
         }
 
     }
 
-    .l-wrapper {
-        @include l-wrapper();
+    .l-container {
+        @include l-container();
     }
 
 /*  ========================================================================== */
-/*  @group Layout Helpers */
+/*  @group l-content */
 /*  ========================================================================== */
 
     * { @include box-sizing(border-box); }
@@ -41,7 +41,7 @@
     }
 
 /*  ========================================================================== */
-/*  @group Header */
+/*  @group l-header */
 /*  ========================================================================== */
 
    @mixin l-header() {
@@ -51,6 +51,7 @@
             width: 250px;
             float: left;
             clear: both;
+            position: fixed;
         }
     }
 
@@ -59,7 +60,7 @@
             font-weight: bold;
             letter-spacing: 0.2em;
             text-align: center;
-            width: 280px;
+            width: 250px;
             margin: 0 auto 3em auto;
         }
         .site-name {
@@ -97,15 +98,28 @@
     }
 
 /*  ========================================================================== */
-/*  @group Footer */
+/*  @group .navigation-post */
 /*  ========================================================================== */
 
-    [role="contentinfo"] {
+   @mixin navigation-post() {
+
+
+        @media only screen and (min-width: $breakpoint-mid) {
+
+        }
+    }
+
+    .navigation-post {
+        @include navigation-post();
+    }
+
+/*  ========================================================================== */
+/*  @group .l-footer */
+/*  ========================================================================== */
+
+    .l-footer {
       clear: both;
       margin: 0 auto;
       @include font-size( 14 );
-
-        p {
-            text-align: right;
-        }
+      text-align: right;
     }
