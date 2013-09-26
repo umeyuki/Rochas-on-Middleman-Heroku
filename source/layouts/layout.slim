@@ -1,12 +1,14 @@
 doctype html
 html
   head
-    meta[charset="utf-8"]
-    meta[name="viewport" content="width=device-width,initial-scale=1"]
-    title= data.site.title
-    meta property="og:title" content= data.site.title
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    title
+      = "#{current_article.title} - " if current_article
+      = data.site.title
+    meta property="og:title" content="#{"#{current_article.title} - " if current_article}#{data.site.title}"
+    meta property="og:url" content="#{"#{current_article.url} - " if current_article}#{data.site.url}"
     meta property="og:type" content="blog"
-    meta property="og:url" content= data.site.url
     meta property="og:description" content=""
     meta property="og:locale" content="ja_JP"
     meta property="og:site_name" content="Dress Cording"
@@ -30,7 +32,7 @@ html
             | DRESS CORDING
       .l-content
         section.clearfix
-          main.clearfix[role="main"]
+          main[role="main"]
             = yield
           = partial "footer"
 
