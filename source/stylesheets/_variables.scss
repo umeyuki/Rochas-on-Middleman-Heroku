@@ -13,9 +13,9 @@ $color-muted: #eef;
 $color-note: #666;
 
 // Common colours
-$color-text: #595857;
+$color-text: #181717;
 $color-text-alt: #fff;
-$color-background: #fffefa;
+$color-background: #f9f9f6;
 $color-border: #ddd;
 
 // Links
@@ -25,8 +25,8 @@ $color-link-hover: #ddd;
 $color-link-active: #ddd;
 
 // Code
-$color-code: #333;
-$color-code-background: #e1eff4;
+$color-code: #f9f9f6;
+$color-code-background: #181717;
 $color-pre: $color-code;
 $color-pre-background: $color-code-background;
 
@@ -58,8 +58,8 @@ $base-lh: $base-line-height;
 // ===========
 
 $font-family-sans: sans-serif;
-$font-family-serif: Georgia, serif;
-$font-family-display: "Arimo","Helvetica Neue",Helvetica,Arial,sans-serif;
+$font-family-serif: Alegreya, Georgia, serif;
+$font-family-display: "Helvetica Neue",Helvetica,Arial,sans-serif;
 $font-family-caption: Verdana, sans-serif;
 $font-family-monospace: "Source Code Pro", Consolas, "Liberation Mono", monospace;
 $font-family-default: $font-family-display;

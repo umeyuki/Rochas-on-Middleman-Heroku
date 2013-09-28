@@ -59,7 +59,7 @@
         h3 { font-size: rs(24); margin: rs(21,24) 0 rs(7,24) 0; }
         h4 { font-size: rs(21); margin: rs(21,21) 0 rs(7,21) 0; }
         h5 { font-size: rs(18); margin: rs(21,18) 0 rs(7,18) 0; }
-        h5 { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
+        p { font-size: rs(15); margin: rs(21,15) 0 rs(7,15) 0; }
 
     /*  @group Links */
     /*  ========================================================================== */
@@ -200,11 +200,14 @@
             background-color: $color-code-background;
         }
         pre, .code {
-            @include font-size( 15 );
+            @include font-size( 13 );
             color: $color-pre;
+            font-weight: $font-weight-light;
             background-color: $color-pre-background;
             margin-bottom: rs($base-lh/2);
             padding: rs($base-lh/2) rs($base-lh);
+            border: 1px dotted #b6b6b6;
+            outline: 1px solid #181717;
         }
         pre code, .code code {
             background-color: transparent;

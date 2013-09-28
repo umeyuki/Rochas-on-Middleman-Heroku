@@ -45,7 +45,7 @@
 /*  ========================================================================== */
 
    @mixin l-header() {
-        background-color: darken( $color-background, 10% );
+        // background-color: darken( $color-background, 10% );
 
         @media only screen and (min-width: $breakpoint-mid) {
             width: 250px;
@@ -55,13 +55,39 @@
         }
     }
 
+        .diamond {
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-bottom-color: $color-code-background;
+            position: relative;
+            top: -50px;
+        }
+        .diamond:after {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 50px;
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-top-color: $color-code-background;
+        }
         .logo {
-            @include font-size( 18 );
-            font-weight: bold;
-            letter-spacing: 0.2em;
+            @include font-size( 50 );
+            font-family: $font-family-serif;
+            font-weight: $font-weight-semibold;
+            letter-spacing: 0.35em;
             text-align: center;
             width: 250px;
             margin: 0 auto 3em auto;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+            transform-origin: top left;
+            -webkit-transform-origin: 20px 33px;
         }
         .site-name {
             @include font-size( 64 );
