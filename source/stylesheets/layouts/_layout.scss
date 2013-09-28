@@ -76,7 +76,6 @@
         .logo {
             @include font-size( 50 );
             font-family: $font-family-serif;
-            font-weight: $font-weight-semibold;
             letter-spacing: 0.35em;
             text-align: center;
             width: 250px;
