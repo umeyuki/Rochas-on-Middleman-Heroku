@@ -9,23 +9,24 @@ html
     meta property="og:title" content="#{"#{current_article.title} - " if current_article}#{data.site.title}"
     meta property="og:url" content="#{"#{current_article.url} - " if current_article}#{data.site.url}"
     meta property="og:type" content="blog"
-    meta property="og:description" content=""
+    meta property="og:description" content="#{data.site.description}"
     meta property="og:locale" content="ja_JP"
-    meta property="og:site_name" content="Dress Cording"
+    meta property="og:site_name" content="#{data.site.url}"
     meta property="fb:admins" content="100002871017327"
     meta property="fb:app_id" content="151099311643297"
     meta name="twitter:card" content="summary"
     meta name="twitter:creator" content="@Rochas_"
-    == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Alegreya:400,700italic,400italic,700|Source+Code+Pro:300"
+    == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Crimson+Text|Source+Code+Pro:300"
     == stylesheet_link_tag "application"
     link href="/feed.xml" rel="alternate" title="Dress Cording" type="application/atom+xml"
   body
     .l-container
       header.l-header[role="banner"]
-        .logo
-          a href="#{data.site.url}" rel="home" 
-            .diamond
-            h1 ROCHAS
+        .flip
+          .logo
+            a href="#{data.site.url}" rel="home" 
+              .logo-background
+              h1.logo-sign ROCHAS
       .l-content
         section
           main[role="main"]

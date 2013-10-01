@@ -24,7 +24,7 @@ activate :blog do |blog|
   # blog.page_link = "page/:num"
 end
 
-# page "blog/*", :layout => :article_layout
+# page "blog/*", :layout => :post
 page "/feed.xml", :layout => false
 
 ###

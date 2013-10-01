@@ -206,8 +206,8 @@
             background-color: $color-pre-background;
             margin-bottom: rs($base-lh/2);
             padding: rs($base-lh/2) rs($base-lh);
-            border: 1px dotted #f9f9f6;
-            outline: 1px solid #181717;
+            border: 1px dotted $color-code-border;
+            outline: 1px solid $color-code-outline;
         }
         pre code, .code code {
             background-color: transparent;

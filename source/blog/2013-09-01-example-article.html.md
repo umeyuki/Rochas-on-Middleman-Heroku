@@ -3,6 +3,7 @@ title: Middlemanでブログをつくろう
 date: 2013-09-01
 tags: Middleman, Rails
 layout: post
+description: Middleman+Herokuでブログをつくる方法。
 ---
 ### 1. Middlemantとは
 
@@ -12,7 +13,7 @@ layout: post
 $ gem install middleman
 $ middleman init rochas --template=blog
 ```
-ターミナルから必要な機能のGemをインストール → config.rbに設定を書く。これを繰り返していくことがカスタマイズの基本的な方法になります。
+ターミナルから必要な機能のGemをインストール → <code>config.rb</code>に設定を書く。これを繰り返していくことがカスタマイズの基本的な方法になります。
 管理画面は存在せず、黒い画面からつくっていくのです。
 
 ### 3. ERBからSlimに変更

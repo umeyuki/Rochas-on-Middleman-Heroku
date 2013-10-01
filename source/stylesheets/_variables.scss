@@ -12,26 +12,34 @@ $color-highlight: #ff9600;
 $color-muted: #eef;
 $color-note: #666;
 
+$color-one: #181717;
+$color-two: #f9f9f6;
+$color-three: #dddddd;
+// $color-four: 
+$color-five: #e1eff4;
+
 // Common colours
-$color-text: #181717;
-$color-text-alt: #fff;
-$color-background: #f9f9f6;
-$color-border: #ddd;
+$color-text: $color-one;
+$color-text-alt: $color-two;
+$color-background: $color-two;
+$color-border: $color-three;
 
 // Links
 $color-link-default: $color-text;
 $color-link-visited: $color-text;
-$color-link-hover: #ddd;
-$color-link-active: #ddd;
+$color-link-hover: $color-three;
+$color-link-active: $color-three;
 
 // Code
-$color-code: #f9f9f6;
-$color-code-background: #181717;
+$color-code: $color-two;
+$color-code-background: $color-one;
+$color-code-border:$color-two;
+$color-code-outline:$color-one;
 $color-pre: $color-code;
 $color-pre-background: $color-code-background;
 
 // Selections
-$color-selection: #e1eff4;
+$color-selection: $color-five;
 
 // Messages
 $color-message: #f4ecbb;
@@ -58,7 +66,7 @@ $base-lh: $base-line-height;
 // ===========
 
 $font-family-sans: sans-serif;
-$font-family-serif: Alegreya, Georgia, serif;
+$font-family-serif: "Crimson Text", Georgia, serif;
 $font-family-display: "Helvetica Neue",Helvetica,Arial,sans-serif;
 $font-family-caption: Verdana, sans-serif;
 $font-family-monospace: "Source Code Pro", Consolas, "Liberation Mono", monospace;

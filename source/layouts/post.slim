@@ -11,9 +11,9 @@ html
     | <meta property="og:title" content=#{"#{current_article.title} - " if current_article}#{data.site.title}>
     meta property="og:type" content="article"
     | <meta property="og:url" content=#{"#{current_article.url} - " if current_article}#{data.site.url}>
-    meta property="og:description" content=""
+    meta property="og:description" content="#{current_article.data.description}"
     meta property="og:locale" content="ja_JP"
-    meta property="og:site_name" content="Dress Cording"
+    meta property="og:site_name" content="#{data.site.url}"
     meta property="fb:admins" content="100002871017327"
     meta property="fb:app_id" content="151099311643297"
     meta name="twitter:card" content="summary"
