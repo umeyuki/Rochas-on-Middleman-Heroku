@@ -1,24 +1,6 @@
 doctype html
 html
-  head
-    meta charset="utf-8"
-    meta name="viewport" content="width=device-width,initial-scale=1"
-    title
-      = "#{current_article.title} - " if current_article
-      = data.site.title
-    meta property="og:title" content="#{"#{current_article.title} - " if current_article}#{data.site.title}"
-    meta property="og:url" content="#{"#{current_article.url} - " if current_article}#{data.site.url}"
-    meta property="og:type" content="blog"
-    meta property="og:description" content="#{data.site.description}"
-    meta property="og:locale" content="ja_JP"
-    meta property="og:site_name" content="#{data.site.url}"
-    meta property="fb:admins" content="100002871017327"
-    meta property="fb:app_id" content="151099311643297"
-    meta name="twitter:card" content="summary"
-    meta name="twitter:creator" content="@Rochas_"
-    == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Crimson+Text|Source+Code+Pro:300"
-    == stylesheet_link_tag "application"
-    link href="/feed.xml" rel="alternate" title="Dress Cording" type="application/atom+xml"
+  = partial "header"
   body
     .l-container
       header.l-header[role="banner"]
@@ -26,7 +8,7 @@ html
           .logo
             a href="#{data.site.url}" rel="home" 
               .logo-background
-              h1.logo-sign ROCHAS
+          h1.logo-sign ROCHAS
       .l-content
         section
           main[role="main"]
