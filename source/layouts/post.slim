@@ -4,14 +4,11 @@ html
   body
     .l-container
       header.l-header[role="banner"]
-        .sns
-          i.icon-twitter
-          i.icon-github
-          i.icon-rss
-        h1.logo
-          a href="" rel="home"
-            span.site-name R
-            | DRESS CORDING
+        .flip
+          .logo
+            a href="#{data.site.url}" rel="home" 
+              .logo-background
+          h1.logo-sign ROCHAS
       .l-content
         section
           main[role="main"]
