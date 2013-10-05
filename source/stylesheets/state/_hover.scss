@@ -2,52 +2,32 @@
 /*  @date-hover state */
 /*  ========================================================================== */
 
-*,
-*:after,
-*::before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
-h2 a {
+.article_header a {
     position: relative;
-    display: inline-block;
-    padding: 10px 0;
-    border-bottom: 2px solid #0972b4;
-} 
+}
 
-h2 a::before {
+h2 a::after {
     position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    padding: 10px 0;
-    max-width: 0;
-    border-bottom: 2px solid #fff;
-    content: attr(data-hover);
-    -webkit-transition: max-width 0.5s;
-    -moz-transition: max-width 0.5s;
-    transition: max-width 0.5s;
+    height: 2px;
+    top: 106%;
+    left: -2%;
+    width: 104%;
+    background: $color-one;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
-h2 a:hover::before,
-h2 a:focus::before {
-    max-width: 100%;
+h2 a:hover::after,
+h2 a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
 }
-    /*
-    * Image replacement
-    */
-    .ir {
-        background-color: transparent;
-        border: 0;
-        overflow: hidden;
-        // IE 6/7 fallback
-        *text-indent: -9999px;
-        &:before {
-            content: "";
-            display: block;
-            width: 0;
-            height: 150%;
-        }
-    }
