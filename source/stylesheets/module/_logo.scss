@@ -3,8 +3,8 @@
 /*  ========================================================================== */
 
 .logo-sign {
-    width: 138px;
-    margin: -9.2em auto;
+    width: 139px;
+    margin: -9.1em auto;
     text-align: center;
     position: absolute;
     @include font-size( 16 );
@@ -14,8 +14,8 @@
 }
 .logo {
     margin: 3.5em auto 3.5em auto;
-    width: 125px;
-    height:125px;
+    width: 124px;
+    height:124px;
     position: relative;
     @include transition();
     -webkit-transform-style: preserve-3d;
@@ -29,9 +29,7 @@
         margin-right: auto;
         height: 90px;
         width: 90px;
-        background-color: $color-one;
-        border: 1px dotted $color-two;
-        outline: 1px solid $color-one;
+        @include dotty-background();
         @include transform();
         @include transition();
     }

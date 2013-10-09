@@ -5,7 +5,6 @@
 // Media Queries
 // =============
 // @see http://jakearchibald.github.com/sass-ie/
-
 $fix-mqs: false !default;
 @mixin respond-min($width) {
   @if $fix-mqs {
@@ -39,7 +38,6 @@ $old-ie: false !default;
   }
 }
 
-
 // Font-size
 // =========
 // rem font-size with px fallback
@@ -47,9 +45,9 @@ $old-ie: false !default;
   font-size: ( $value ) * 1px;
   font-size: ( $value / $base-font-size ) * 1rem;
 }
+
 // Box Sizing
 // ==========
-
 @mixin box-sizing ($type: border-box) {
   // content-box | border-box | inherit
   -webkit-box-sizing: $type;
@@ -57,31 +55,9 @@ $old-ie: false !default;
           box-sizing: $type;
 }
 
-// Transform
-// ==========
-
-@mixin transform {
-  -webkit-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-  -moz-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-  -ms-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-  -o-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-  transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-}
-
-// Transition
-// ==========
-
-@mixin transition {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
 // Inline Block
 // ============
 // Custom version of http://bit.ly/thoughtbot-bourbon-inline-block
-
 @mixin inline-block($alignment: baseline) {
   display: inline-block;
   @if $alignment and $alignment != none {
@@ -94,29 +70,50 @@ $old-ie: false !default;
   }
 }
 
-
 // Box reset
 // =========
 // Reset border, margin, and padding
 @mixin box-reset() {
-
   margin: 0;
   padding: 0;
   border: 0 none;
-
 }
-
 
 // Button
 // ======
 // Base button styles, based on https://github.com/csswizardry/beautons
 @mixin button() {
+  @include box-reset();
+  @include inline-block( middle );
+  white-space: nowrap;
+  font-size: 100%;
+  cursor: pointer;
+  overflow: visible;
+}
 
-    @include box-reset();
-    @include inline-block( middle );
-    white-space: nowrap;
-    font-size: 100%;
-    cursor: pointer;
-    overflow: visible;
 
+// Transform
+// ==========
+@mixin transform {
+  -webkit-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
+  -moz-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
+  -ms-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
+  -o-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
+  transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
+}
+
+// Transition
+// ==========
+@mixin transition {
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  transition: all 0.7s ease;  
+}
+
+@mixin dotty-background {
+  background-color: $color-one;
+  border: 1px dotted $color-two;
+  outline: 1px solid $color-one;
 }

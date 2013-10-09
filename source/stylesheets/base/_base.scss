@@ -59,7 +59,7 @@
         h3 { font-size: rs(24); margin: rs(21,24) 0 rs(7,24) 0; }
         h4 { font-size: rs(21); margin: rs(21,21) 0 rs(7,21) 0; }
         h5 { font-size: rs(18); margin: rs(21,18) 0 rs(7,18) 0; }
-        p { font-size: rs(15); margin: rs(21,15) 0 rs(7,15) 0; }
+        p { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
 
     /*  @group Links */
     /*  ========================================================================== */
@@ -75,6 +75,7 @@
 
         a {
             color: $color-link-default;
+            @include transition();
         }
         a:visited {
             color: $color-link-visited;
@@ -82,7 +83,6 @@
         a:hover {
             cursor: pointer;
             color: $color-link-hover;
-            color: lighten( $color-text, 40% );
         }
         a:active {
             color: $color-link-active;
@@ -97,10 +97,10 @@
         }
 
         /* Lists */
-        // ul, ol, dl            { padding: 0; }
+        ul, li, ol, dl            { padding: 0; }
         // ul ul, ol ol, dl dl   { margin-bottom: 0; }
         // ul li, ol li          { margin-left: rs($base-lh,$base-fs); }
-        // ul li                 { list-style: disc outside; }
+        ul li                 {list-style: none; }
         // ol li                 { list-style: outside decimal; }
         // ul li ul              { margin: rs($base-lh/2) 0 0 rs($base-fs); }
         // dl dt                 { font-weight: bold; }
@@ -200,14 +200,12 @@
             background-color: $color-code-background;
         }
         pre, .code {
-            @include font-size( 13 );
+            @include font-size( 14 );
+            @include dotty-background();
             color: $color-pre;
             font-weight: $font-weight-light;
-            background-color: $color-pre-background;
             margin-bottom: rs($base-lh/2);
             padding: rs($base-lh/2) rs($base-lh);
-            border: 1px dotted $color-code-border;
-            outline: 1px solid $color-code-outline;
         }
         pre code, .code code {
             background-color: transparent;

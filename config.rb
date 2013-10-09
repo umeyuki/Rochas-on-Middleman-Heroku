@@ -59,7 +59,7 @@ set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 # Middleman-Syntax Extention
-activate :rouge_syntax
+# activate :rouge_syntax
 
 # Per-page layout changes:
 #

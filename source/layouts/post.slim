@@ -2,21 +2,21 @@ doctype html
 html
   = partial "header"
   body
-    .l-container
-      header.l-header[role="banner"]
+    .container
+      header.header[role="banner"]
         .flip
           .logo
             a href="#{data.site.url}" rel="home" 
               .logo-background
           h1.logo-sign ROCHAS
-      .l-content
+      .content
         section
           main[role="main"]
             article
-              time
-                = current_article.date.strftime('%B %e, %Y')
-              h2
-                = current_article.title
-              = yield
+              .article_header
+                time = current_article.date.strftime('%B %e, %Y')
+                h2 = current_article.title
+              .article_body
+                = yield
           = partial "navigation"
     = partial "footer"

@@ -2,44 +2,43 @@
 /*  @group Layout */
 /*  ========================================================================== */
 
-    @mixin l-container() {
+    @mixin container() {
         @media only screen and (min-width: $breakpoint-narrow) {
-            // border-top: medium solid $color-text;
+
         }
-
     }
 
-    .l-container {
-        @include l-container();
+    .container {
+        @include container();
     }
 
 /*  ========================================================================== */
-/*  @group l-content */
+/*  @group content */
 /*  ========================================================================== */
 
-    * { @include box-sizing(border-box); }
+    //* { @include box-sizing(border-box); }
 
-    @mixin l-content() {
+    @mixin content() {
 
         width: 100%;
         max-width: 720px;
         margin: 0 auto;
 
         @media only screen and (max-width: $breakpoint-narrow) {
-            width: 95%;
+            width: 92%;
         }
 
     }
 
-    .l-content {
-        @include l-content();
+    .content {
+        @include content();
     }
 
 /*  ========================================================================== */
-/*  @group l-header */
+/*  @group header */
 /*  ========================================================================== */
 
-   @mixin l-header() {
+   @mixin header() {
         // background-color: darken( $color-background, 10% );
 
     }
@@ -49,8 +48,8 @@
           text-align: right;
         }
 
-    .l-header {
-        @include l-header();
+    .header {
+        @include header();
     }
 
 
@@ -89,10 +88,10 @@
     }
 
 /*  ========================================================================== */
-/*  @group .l-footer */
+/*  @group .footer */
 /*  ========================================================================== */
 
-    .l-footer {
+    .footer {
       clear: both;
       margin: 0 auto;
       @include font-size( 14 );
