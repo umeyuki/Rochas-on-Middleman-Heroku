@@ -74,7 +74,9 @@ ul  {
         }
 
     }
-
+    .nav-site li {
+        @include inline-block();
+    }
    /*  .nav-stacked {
         & > li {
             display: list-item;
@@ -83,7 +85,12 @@ ul  {
             display: block;
         }
     } */
-
+    .sns {
+        @include font-size( 18 );
+        letter-spacing: 0.9em;
+        text-align: right;
+    }
+    
     .nav-banner {
         text-align: center;
     }

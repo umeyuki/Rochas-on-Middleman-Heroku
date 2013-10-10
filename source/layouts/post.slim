@@ -9,14 +9,15 @@ html
             a href="#{data.site.url}" rel="home" 
               .logo-background
           h1.logo-sign ROCHAS
-      .content
-        section
-          main[role="main"]
-            article
-              .article_header
-                time = current_article.date.strftime('%B %e, %Y')
-                h2 = current_article.title
-              .article_body
-                = yield
-          = partial "navigation"
-    = partial "footer"
+      .wrapper
+        .content
+          section
+            main[role="main"]
+              article
+                .article_header
+                  time = current_article.date.strftime('%B %e, %Y')
+                  h2 = current_article.title
+                .article_body
+                  = yield
+            = partial "navigation"
+      = partial "footer"

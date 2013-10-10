@@ -9,11 +9,18 @@ html
             a href="#{data.site.url}" rel="home" 
               .logo-background
           h1.logo-sign ROCHAS
-      .content
-        section
-          main[role="main"]
-            = yield
-          = partial "navigation"
+        nav.nav-site
+          ul
+            li
+              a href='#{data.site.url}' Blog
+            li
+              a href='about' About 
+      .wrapper
+        .content
+          section
+            main[role="main"]
+              = yield
+            = partial "navigation"
       = partial "footer"
 
     

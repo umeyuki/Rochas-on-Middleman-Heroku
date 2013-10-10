@@ -3,6 +3,7 @@
 /*  ========================================================================== */
 
     @mixin container() {
+        padding-bottom: 350px;
         @media only screen and (min-width: $breakpoint-narrow) {
 
         }
@@ -17,12 +18,18 @@
 /*  ========================================================================== */
 
     //* { @include box-sizing(border-box); }
-
+    .wrapper {
+        width: 100%;
+        position: relative;
+        background-color: $color-two;
+        top:250px;
+        z-index: 3;
+    }
     @mixin content() {
-
         width: 100%;
         max-width: 720px;
         margin: 0 auto;
+
 
         @media only screen and (max-width: $breakpoint-narrow) {
             width: 92%;
@@ -31,7 +38,7 @@
     }
 
     .content {
-        @include content();
+        @include content();  
     }
 
 /*  ========================================================================== */
@@ -39,14 +46,11 @@
 /*  ========================================================================== */
 
    @mixin header() {
-        // background-color: darken( $color-background, 10% );
-
+        position: fixed;
+        top:0;
+        background-color: $color-one;
+        width:100%;
     }
-        .sns {
-          @include font-size( 18 );
-          letter-spacing: 0.9em;
-          text-align: right;
-        }
 
     .header {
         @include header();
@@ -92,8 +96,13 @@
 /*  ========================================================================== */
 
     .footer {
+      position: fixed;
+      width: 100%;
+      bottom: 0;  
       clear: both;
       margin: 0 auto;
+      background-color: $color-one;
+      color:  $color-two;
       @include font-size( 14 );
-      text-align: right;
+      text-align: center;
     }
