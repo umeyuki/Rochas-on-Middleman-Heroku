@@ -3,7 +3,6 @@
 /*  ========================================================================== */
 
     @mixin container() {
-        padding-bottom: 350px;
         @media only screen and (min-width: $breakpoint-narrow) {
 
         }
@@ -18,13 +17,6 @@
 /*  ========================================================================== */
 
     //* { @include box-sizing(border-box); }
-    .wrapper {
-        width: 100%;
-        position: relative;
-        background-color: $color-two;
-        top:250px;
-        z-index: 3;
-    }
     @mixin content() {
         width: 100%;
         max-width: 720px;
@@ -46,9 +38,7 @@
 /*  ========================================================================== */
 
    @mixin header() {
-        position: fixed;
         top:0;
-        background-color: $color-one;
         width:100%;
     }
 
@@ -96,7 +86,6 @@
 /*  ========================================================================== */
 
     .footer {
-      position: fixed;
       width: 100%;
       bottom: 0;  
       clear: both;

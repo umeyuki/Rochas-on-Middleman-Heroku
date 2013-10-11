@@ -15,12 +15,11 @@ html
               a href='#{data.site.url}' Blog
             li
               a href='about' About 
-      .wrapper
-        .content
-          section
-            main[role="main"]
-              = yield
-            = partial "navigation"
+      .content
+        section
+          main[role="main"]
+            = yield
+          = partial "navigation"
       = partial "footer"
 
     
