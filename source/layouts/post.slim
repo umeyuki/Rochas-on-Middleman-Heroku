@@ -3,7 +3,7 @@ html
   = partial "header"
   body
     .container
-      header.header[role="banner"]
+      header[role="banner"]
         .flip
           .logo
             a href="#{data.site.url}" rel="home" 
@@ -13,10 +13,17 @@ html
         section
           main[role="main"]
             article
-              .article_header
-                time datetime = article.date.strftime('%Y-%m-%d') = article.date.strftime('%B %e, %Y')
+              .article-header
                 h2 = current_article.title
-              .article_body
+                time datetime = current_article.date.strftime('%Y-%m-%d') = current_article.date.strftime('%B %e, %Y')
+                ul.article-tags
+                  - current_article.tags.each do |tag|
+                    li = link_to tag, tag_path(tag)
+              .article-body
                 = yield
           = partial "navigation"
       = partial "footer"
+
+  / %ul.tags
+  /   - tags.each do |tag|
+  /     %li= link_to tag, "/tag/#{tag}"

@@ -2,6 +2,27 @@
 /*  @Logo Modules */
 /*  ========================================================================== */
 
+ .flip {
+    width: 132px;
+    height:132px;
+    margin-left: auto;
+    margin-right: auto;
+    &:hover .logo {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+     &:hover .logo-background {
+        background-color: $color-two;
+        outline: 1px solid $color-one;
+     }
+    &:hover .logo-sign {
+        color: $color-one;
+    }
+}
+
 .logo-sign {
     width: 139px;
     margin: -9.1em auto;
@@ -32,25 +53,5 @@
         @include dotty-background();
         @include transform();
         @include transition();
-    }
-}
- .flip {
-    width: 132px;
-    height:132px;
-    margin-left: auto;
-    margin-right: auto;
-    &:hover .logo {
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
-        transform: rotateY(180deg);
-    }
-     &:hover .logo-background {
-        background-color: $color-two;
-        outline: 1px solid $color-one;
-     }
-    &:hover .logo-sign {
-        color: $color-one;
     }
 }

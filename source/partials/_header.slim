@@ -1,30 +1,30 @@
-head
-  meta charset="utf-8"
-  meta name="viewport" content="width=device-width,initial-scale=1"
-  - if current_article.nil?
-    / Topページの時 
-    title = data.site.title
-    meta property="og:title" content="#{data.site.title}"
-    meta property="og:url" content="#{data.site.url}"
-    meta property="og:type" content="blog"
-    meta property="og:description" content="#{data.site.description}"
-  - else
-    / 個別ページの時
-    title = "#{current_article.title} - #{data.site.title}"
-    meta property="og:title" content="#{current_article.title} - #{data.site.title}"
-    meta property="og:url" content="#{current_article.url}"
-    meta property="og:type" content="article"
-    meta property="og:description" content="#{current_article.data.description}"
-  
-  meta property="og:locale" content="ja_JP"
-  meta property="og:site_name" content="#{data.site.url}"
-  meta property="fb:admins" content="100002871017327"
-  meta property="fb:app_id" content="151099311643297"
-  meta name="twitter:card" content="summary"
-  meta name="twitter:creator" content="@Rochas_"
-  == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans"
-  == stylesheet_link_tag "application"
-  link href="/feed.xml" rel="alternate" title="Dress Cording" type="application/atom+xml"
-  script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
-  == javascript_include_tag "parallax"
+html lang="ja" itemscope="" itemtype="http://schema.org/WebPage"
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    - if current_article.nil?
+      / layout
+      title = data.site.title
+      meta property="og:title" content="#{data.site.title}"
+      meta property="og:url" content="#{data.site.url}"
+      meta property="og:type" content="blog"
+      meta property="og:description" content="#{data.site.description}"
+    - else
+      / post
+      title = "#{current_article.title} - #{data.site.title}"
+      meta property="og:title" content="#{current_article.title} - #{data.site.title}"
+      meta property="og:url" content="#{current_article.url}"
+      meta property="og:type" content="article"
+      meta property="og:description" content="#{current_article.data.description}"
+    
+    meta property="og:locale" content="ja_JP"
+    meta property="og:site_name" content="#{data.site.url}"
+    meta property="fb:admins" content="100002871017327"
+    meta property="fb:app_id" content="151099311643297"
+    meta name="twitter:card" content="summary"
+    meta name="twitter:creator" content="@Rochas_"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Crimson+Text|Lato:400,700"
+    = stylesheet_link_tag "application"
+    link href="/feed.xml" rel="alternate" title="Dress Cording" type="application/atom+xml"
+    script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    = javascript_include_tag "parallax"
 

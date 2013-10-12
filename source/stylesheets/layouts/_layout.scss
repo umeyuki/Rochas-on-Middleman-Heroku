@@ -40,9 +40,12 @@
    @mixin header() {
         top:0;
         width:100%;
+        text-align: center;
+        font-family: $font-family-serif;
+        margin-bottom: 3em
     }
 
-    .header {
+    header {
         @include header();
     }
 
@@ -71,7 +74,6 @@
 
    @mixin navigation-post() {
 
-
         @media only screen and (min-width: $breakpoint-mid) {
 
         }
@@ -85,7 +87,7 @@
 /*  @group .footer */
 /*  ========================================================================== */
 
-    .footer {
+    footer {
       width: 100%;
       bottom: 0;  
       clear: both;

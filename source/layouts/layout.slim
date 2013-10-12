@@ -3,18 +3,14 @@ html
   = partial "header"
   body
     .container
-      header.header[role="banner"]
+      header[role="banner"]
         .flip
           .logo
             a href="#{data.site.url}" rel="home" 
               .logo-background
           h1.logo-sign ROCHAS
         nav.nav-site
-          ul
-            li
-              a href='#{data.site.url}' Blog
-            li
-              a href='about' About 
+          p I write a blog, because Web Design inspirarion is all around us !
       .content
         section
           main[role="main"]
