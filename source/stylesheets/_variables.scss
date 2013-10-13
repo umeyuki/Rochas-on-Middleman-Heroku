@@ -6,11 +6,13 @@
 // colour scheme variable names use american english _color_
 
 // Main colour palette
+/* 
 $color-primary: #2b306a;
 $color-secondary: #06c0db;
 $color-highlight: #ff9600;
 $color-muted: #eef;
-$color-note: #666;
+$color-note: #666; 
+*/
 
 $color-one: #181717;
 $color-two: #f9f9f6;  
@@ -65,10 +67,8 @@ $base-lh: $base-line-height;
 // Font Stacks
 // ===========
 
-$font-family-sans: sans-serif;
 $font-family-serif: "Crimson Text", Georgia, serif;
-$font-family-display: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif; //"Open Sans",
-$font-family-caption: Verdana, sans-serif;
+$font-family-display: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif; //"Open Sans",
 $font-family-monospace: "Source Code Pro", Consolas, "Liberation Mono", monospace;
 $font-family-default: $font-family-display;
 

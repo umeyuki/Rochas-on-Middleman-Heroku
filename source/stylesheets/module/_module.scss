@@ -8,7 +8,7 @@
 article {
     border-bottom: 1px dotted lighten( $color-text, 50% );
     .article-header {
-        font-family: $font-family-serif;
+        
     }
 }
 
@@ -57,7 +57,7 @@ article {
 /*  ========================================================================== */
 /*  @group Opt-in Typography */
 /*  ========================================================================== */
-    .lead {
+   /*  .lead {
         font-size: 120%;
         line-height: 1.3;
     }
@@ -75,7 +75,7 @@ article {
             border-bottom: 1px dotted $color-link-default;
         }
 
-    }
+    } */
 
 /*  ========================================================================== */
 /*  @group Navigation */

@@ -17,7 +17,7 @@
 /*  ========================================================================== */
 
     body {
-        font: $font-weight-normal #{$base-fs/16*100};
+        // font: $font-weight-normal #{$base-fs/16*100};
         line-height: $base-lh/$base-fs;
     }
 
@@ -34,9 +34,6 @@
 
     /* Alternate font stack */
     blockquote, figcaption { font-family: $font-family-serif;  }
-
-    /* Caption font stack, should be suitable for smaller sizes */
-    [role=contentinfo], .caption { font-family: $font-family-caption; }
 
     /* Monospace font stack, for code samples and preformatted content */
     pre, code, kbd, samp { font-family: $font-family-monospace; }
@@ -59,8 +56,9 @@
         h3 { font-size: rs(24); margin: rs(21,24) 0 rs(7,24) 0; }
         h4 { font-size: rs(21); margin: rs(21,21) 0 rs(7,21) 0; }
         h5 { font-size: rs(18); margin: rs(21,18) 0 rs(7,18) 0; }
-        p { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
+        p { font-size: rs(15); margin: rs(21,15) 0 rs(7,15) 0; }
 
+        h2 {line-height: 1.2em;}
     /*  @group Links */
     /*  ========================================================================== */
         // Declared: link, visited, hover, active
@@ -109,7 +107,7 @@
 
         /* Text Marking */
         b, strong, mark { font-weight: bold; }
-        dfn, mark { font-style: italic; }
+        /* dfn, mark { font-style: italic; }
         ins, mark {
             color: invert($color-highlight);
             background-color: $color-highlight;
@@ -119,8 +117,8 @@
 
         abbr[title], dfn[title] {
             cursor: help;
-            border-bottom: 1px dotted;
-        }
+            border-bottom: 1px dotted; 
+        }*/
 
         // Position subscript and superscript content without affecting line-height: h5bp.com/k
         sub, sup {
@@ -134,7 +132,7 @@
 
         /*
          * A better looking default horizontal rule
-         */
+         
         hr {
             display: block;
             height: 1px;
@@ -142,7 +140,7 @@
             border-top: 1px solid $color-muted;
             margin: rs($base-lh/2) 0;
             padding: 0;
-        }
+        }*/
 
         /*
          * Remove text-shadow in selection highlight: h5bp.com/i
