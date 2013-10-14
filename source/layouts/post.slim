@@ -21,6 +21,7 @@ html
                     li = link_to tag, tag_path(tag)
               .article-body
                 = yield
+                = partial "share"
                 - if paginate
                   - if next_page
                     p = link_to 'Next page', next_page
