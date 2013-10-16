@@ -32,8 +32,8 @@ article {
           left: 0;
           top: .6em;
           background: $color-one;
-          width: .2em;
-          height: .2em;
+          width: 3px;
+          height: 3px;
           top: .7em;
           @include transform;
         }

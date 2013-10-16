@@ -1,16 +1,16 @@
 doctype html
 html
   = partial "header"
-  body
+  body class=[page_classes]
     .container
       header[role="banner"]
-        .flip
+        .signature
           .logo
             a href="#{data.site.url}" rel="home" 
               .logo-background
           h1.logo-sign ROCHAS
-        nav.nav-site
-          p I write a blog, because Web Design inspirarion is all around us !
+        .description
+          p="#{data.site.description}"
       .content
         section
           main[role="main"]

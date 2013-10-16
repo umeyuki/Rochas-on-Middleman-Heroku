@@ -4,11 +4,13 @@ html
   body
     .container
       header[role="banner"]
-        .flip
+        .signature
           .logo
             a href="#{data.site.url}" rel="home" 
               .logo-background
           h1.logo-sign ROCHAS
+        .description
+          p="#{data.site.description}"
       .content
         section
           main[role="main"]
