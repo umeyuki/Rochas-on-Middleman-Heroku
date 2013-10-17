@@ -29,14 +29,14 @@ module Rack
   end
 end
 
-use Rack::TryStatic, :root => "build", :urls => %w[/], :try => ['.html', 'index.html', '/index.html']
-
 require 'rack/rewrite'
 use Rack::Rewrite do
   r301 %r{.*}, 'http://rochas.cc$&', :if => Proc.new {|rack_env|
     rack_env['SERVER_NAME'] != 'rochas.cc'
   }
 end
+
+use Rack::TryStatic, :root => "build", :urls => %w[/], :try => ['.html', 'index.html', '/index.html']
 
 # Run your own Rack app here or use this one to serve 404 messages:
 run lambda{ |env|
