@@ -123,3 +123,10 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+require 'rack/rewrite'
+use Rack::Rewrite do
+  r301 %r{.*}, 'http://rochas.cc$&', :if => Proc.new {|rack_env|
+    rack_env['SERVER_NAME'] != 'rochas.cc'
+  }
+end

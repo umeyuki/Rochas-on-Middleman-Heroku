@@ -31,3 +31,4 @@ gem "slim", "~> 2.0.1"
 # Heroku
 gem 'heroku'
 
+gem 'rack-rewrite' 
