@@ -1,1 +1,1 @@
-web: bundle exec middleman build && bundle exec middleman server -p $PORT
+web: bundle exec middleman build && bundle exec rackup -p $PORT
