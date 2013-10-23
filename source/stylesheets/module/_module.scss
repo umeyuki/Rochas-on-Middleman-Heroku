@@ -7,8 +7,9 @@
 /*  ========================================================================== */
 article {
     border-bottom: 1px dotted lighten( $color-text, 50% );
+    padding: 0.5em inherit;
     .article-header {
-        
+        margin-bottom: 1.5em;
     }
 }
 

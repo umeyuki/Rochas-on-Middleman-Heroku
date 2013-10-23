@@ -6,10 +6,22 @@ layout: post
 ---
 
 * Middleman
-* SMACSS
 * Vertical Rythm
 * main 要素
 * WAI ARIA [Land Mark]
+
+![alt text](/images/design_patten_color.png "Logo Title Text 1")
+
+```ruby
+Slim::Engine.set_default_options :pretty => true
+
+Slim::Engine.set_default_options :shortcut => {
+  '#' => {:tag => 'div', :attr => 'id'},
+  '.' => {:tag => 'div', :attr => 'class'},
+  '&' => {:tag => 'input', :attr => 'type'}
+}
+```
+
 
 
 

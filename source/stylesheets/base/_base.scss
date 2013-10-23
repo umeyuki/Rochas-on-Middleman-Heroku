@@ -56,7 +56,7 @@
         h3 { font-size: rs(24); margin: rs(21,24) 0 rs(7,24) 0; }
         h4 { font-size: rs(21); margin: rs(21,21) 0 rs(7,21) 0; }
         h5 { font-size: rs(18); margin: rs(21,18) 0 rs(7,18) 0; }
-        p { font-size: rs(15); margin: rs(21,15) 0 rs(7,15) 0; }
+        p { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
 
         h2 {line-height: 1.2em;}
     /*  @group Links */
@@ -162,7 +162,11 @@
         img { vertical-align: middle; }
 
         /* _width hack is for IE6 and below */
-        img, embed, object, video { max-width: 100%; _width: 100%; }
+        img, embed, object, video { max-width: 85%; _width: 85%; display: block; margin: 1.5em auto;
+            @media only screen and (max-width: $breakpoint-mid) {
+            max-width: 100%; _width: 100%
+            }
+        }
         img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
         /* Correct overflow displayed oddly in IE9 */
