@@ -10,6 +10,7 @@ layout: post
 * main 要素
 * WAI ARIA [Land Mark]
 
+はじめまして。＠Rochasと申します。今まで Dress Cording というBlog を書いていたのですが新しくBlogをつくってみました。
 
 ![alt text](/images/design_patten_color.png "Logo Title Text 1")
 
