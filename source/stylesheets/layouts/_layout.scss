@@ -2,100 +2,38 @@
 /*  @group Layout */
 /*  ========================================================================== */
 
-    @mixin container() {
-        @media only screen and (min-width: $breakpoint-narrow) {
-
-        }
-    }
-
-    .container {
-        @include container();
-    }
-
-/*  ========================================================================== */
-/*  @group content */
-/*  ========================================================================== */
-
     //* { @include box-sizing(border-box); }
-    @mixin content() {
+    .content {
         width: 100%;
         max-width: 720px;
         margin: 0 auto;
 
-
         @media only screen and (max-width: $breakpoint-mid) {
             width: 92%;
         }
-
     }
 
-    .content {
-        @include content();  
-    }
 
 /*  ========================================================================== */
 /*  @group header */
 /*  ========================================================================== */
 
-   @mixin header() {
+   header {
         top:0;
         width:100%;
         text-align: center;
         font-family: $font-family-serif;
         margin-bottom: 1.5em;
         padding-top: 3.5em;
-
     }
-
-    header {
-        @include header();
-    }
-
-
-
-/*  ========================================================================== */
-/*  @group Main */
-/*  ========================================================================== */
-
-    // * { @include box-sizing(border-box); }
-
-    @mixin main() {
-     
-    }
-
-    [role="main"] {
-        @include main();
-    }
-    [role="complementary"] {
-
-    }
-
-/*  ========================================================================== */
-/*  @group .navigation-post */
-/*  ========================================================================== */
-
-   @mixin navigation-post() {
-
-        @media only screen and (min-width: $breakpoint-mid) {
-
-        }
-    }
-
-    .navigation-post {
-        @include navigation-post();
-    }
-
-/*  ========================================================================== */
-/*  @group .footer */
-/*  ========================================================================== */
 
     footer {
       width: 100%;
-      bottom: 0;  
-      clear: both;
-      margin: 0 auto;
       background-color: $color-one;
       color:  $color-two;
       @include font-size( 14 );
       text-align: center;
+      p {
+        margin-bottom: 0;
+      }
     }

@@ -1,9 +1,9 @@
 /*  ========================================================================== */
-/*  @group Modules */
+/*  Modules */
 /*  ========================================================================== */
 
 /*  ========================================================================== */
-/*  @group Text */
+/*  article  */
 /*  ========================================================================== */
 article {
     border-bottom: 1px dotted lighten( $color-text, 50% );
@@ -47,13 +47,31 @@ article {
             content: '/';
             margin-right: 1em; }
 }
-    .more {
-        text-align: right;
-        &::after {
-            content: '\2192';
-            margin-left: .2em;
-        }
+
+.more {
+    float: right;
+    font-family: $font-family-serif;
+    &::after {
+        content: '\2192';
+        margin-left: .2em;
     }
+}
+
+.btn {
+    @include button();
+    @include transition();
+    height: 2em;
+    line-height: 2;
+    padding-right: .75em;
+    padding-left: .75em;
+    background-color: lighten( $color-one, 81% );
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+            background-color: lighten( $color-one, 70% );
+        }
+}
 
 /*  ========================================================================== */
 /*  @group Opt-in Typography */
@@ -110,36 +128,5 @@ article {
         li:first-child::before { content: ""; margin: 0; }
     } */
 
-/*  ========================================================================== */
-/*  @group Buttons */
-/*  ========================================================================== */
 
-    .btn {
 
-        @include button();
-        @include dotty-background();
-
-        height: 2em;
-        line-height: 2;
-        padding-right: .75em;
-        padding-left: .75em;
-
-        color: $color-two;
-    }
-
-    .btn,
-    .btn:hover,
-    .btn:active,
-    .btn:focus,
-    .btn:visited{
-        color: $color-two;
-        text-decoration: none;
-    }
-    .btn:hover,
-    .btn:active{
-        background-color: darken( $color-two, 10% );
-    }
-    .btn:active,
-    .btn:focus {
-        outline: none;
-    }

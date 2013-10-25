@@ -10,6 +10,7 @@ layout: post
 * main 要素
 * WAI ARIA [Land Mark]
 
+
 ![alt text](/images/design_patten_color.png "Logo Title Text 1")
 
 ```ruby
@@ -21,6 +22,7 @@ Slim::Engine.set_default_options :shortcut => {
   '&' => {:tag => 'input', :attr => 'type'}
 }
 ```
+
 
 
 
