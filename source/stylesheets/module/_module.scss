@@ -64,13 +64,14 @@ article {
     &::after {
         content: '\2192';
         margin-left: .2em;
+        vertical-align: middle;
     }
 }
 
 .btn {
     @include button();
     @include transition();
-    height: 2.2em;
+    height: 2em;
     line-height: 2.2;
     padding-right: 1.1em;
     padding-left: 1.2em;
@@ -156,7 +157,7 @@ article {
     .copy {
         margin-bottom: 0;
         padding-left: 5.5em;
-        line-height: 2.3em;
+        line-height: 2em;
         font-family: $font-family-serif;
     }
 

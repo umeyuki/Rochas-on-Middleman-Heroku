@@ -1,18 +1,7 @@
 ---
-title: ブログをリプロデュースしました
+title: Middleman + Slim + Herokuでブログをつくりました
 date: 2013-10-01
-tags: Test
+tags: Middleman, Rails
 layout: post
+description: Middleman + Slim + Herokuでブログをつくりました
 ---
-
-* Middleman
-* Vertical Rythm
-* main 要素
-* WAI ARIA [Land Mark]
-
-
-
-
-
-
-
