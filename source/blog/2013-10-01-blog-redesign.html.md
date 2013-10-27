@@ -14,13 +14,5 @@ layout: post
 
 
 
-```ruby
-Slim::Engine.set_default_options :pretty => true
-
-Slim::Engine.set_default_options :shortcut => {
-```
-![alt text](/images/design_patten_color.png "Logo Title Text 1")
-
-
 
 
