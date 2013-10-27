@@ -13,7 +13,17 @@ article {
     }
 }
 
-.nav-site ul, .nav-tags, .article-tags {
+.description {
+    width: 100%;
+    p {
+        @media only screen and (max-width: $breakpoint-mid) {
+            width: 265px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+    }
+}
+.nav-global ul, .nav-tags, .article-tags {
     & > li,
     & > li > a {
         @include inline-block();
@@ -60,10 +70,10 @@ article {
 .btn {
     @include button();
     @include transition();
-    height: 2em;
-    line-height: 2;
-    padding-right: .75em;
-    padding-left: .75em;
+    height: 2.2em;
+    line-height: 2.2;
+    padding-right: 1.1em;
+    padding-left: 1.2em;
     background-color: lighten( $color-one, 81% );
         &:hover,
         &:active,
@@ -88,11 +98,6 @@ article {
         margin-bottom: .5em;
     }
 
-    .copy {
-
-        a {
-            border-bottom: 1px dotted $color-link-default;
-        }
 
     } */
 
@@ -109,14 +114,35 @@ article {
             display: block;
         }
     } */
-    .sns {
-        @include font-size( 18 );
-        letter-spacing: 0.9em;
-        text-align: right;
+    .nav-global {
+        @include font-size( 13.5 );
+        ul {
+            padding: .4em 0 0 1em;
+            margin-bottom: -.3em;
+        }
+        a {
+            color: $color-two;
+            @include transition();
+        }
+        a:visited {
+            color: $color-two;
+        }
+        a:hover {
+            cursor: pointer;
+            color: $color-link-hover;
+        }
+        a:active {
+            color: $color-link-active;
+        }
     }
-
-    .nav-banner {
-        text-align: center;
+    .sns {
+        @include font-size( 17 );
+        float: right;
+        letter-spacing: 1.1em;
+        margin: -.2em .5em 0 0;
+        i {
+            color: $color-two;
+        }
     }
 
 /*     .nav-tags {
@@ -127,6 +153,11 @@ article {
         }
         li:first-child::before { content: ""; margin: 0; }
     } */
-
+    .copy {
+        margin-bottom: 0;
+        padding-left: 5.5em;
+        line-height: 2.3em;
+        font-family: $font-family-serif;
+    }
 
 

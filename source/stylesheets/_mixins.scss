@@ -86,7 +86,7 @@ $old-ie: false !default;
   @include box-reset();
   @include inline-block( middle );
   white-space: nowrap;
-  font-size: 100%;
+  font-size: 96%;
   cursor: pointer;
   overflow: visible;
 }

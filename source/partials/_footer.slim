@@ -1,14 +1,15 @@
 footer[role="contentinfo"]
-  nav.nav-site [role="navigation"]
+  nav.nav-global [role="navigation"]
     ul
       li
         a href="#{data.site.url}" Blog
       li
         a href="about" About 
   .sns
-    i.icon-twitter
-    i.icon-github
-    i.icon-rss
-  p
+    a target="_blank" href="https://twitter.com/rochas_"
+      i.icon-twitter
+    a target="_blank" href="#{data.site.url}/atom.xml"
+      i.icon-rss
+  p.copy
     small
        | Copyright &copy; #{data.site.year} #{data.site.author}

@@ -27,13 +27,13 @@
         padding-top: 3.5em;
     }
 
+    section {
+        margin-bottom: 1.8em;
+    }
+
     footer {
       width: 100%;
       background-color: $color-one;
-      color:  $color-two;
-      @include font-size( 14 );
+      color: $color-two;
       text-align: center;
-      p {
-        margin-bottom: 0;
-      }
     }
