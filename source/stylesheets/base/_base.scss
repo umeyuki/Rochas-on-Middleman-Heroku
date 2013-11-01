@@ -18,7 +18,7 @@
 
     body {
         // font: $font-weight-normal #{$base-fs/16*100};
-        line-height: $base-lh/$base-fs;
+        line-height: $base-lh/$base-fs*1.2;
     }
 
     /* Default font stack */
@@ -56,16 +56,17 @@
         h3 { font-size: rs(24); margin: rs(21,24) 0 rs(7,24) 0; }
         h4 { font-size: rs(21); margin: rs(21,21) 0 rs(7,21) 0; }
         h5 { font-size: rs(18); margin: rs(21,18) 0 rs(7,18) 0; }
-        // p { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
+        p { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
 
         h2 {line-height: 1.2em;}
+ 
     /*  @group Links */
     /*  ========================================================================== */
         // Declared: link, visited, hover, active
 
         a {
             text-decoration: none;
-            // word-wrap: break-word;
+            word-wrap: break-word;
     
         }
         a:focus { outline: thin dotted; }
@@ -90,7 +91,7 @@
     /*  ========================================================================== */
 
         /* Default margins */
-        p, ul, ol, dl {
+        ul, ol, dl {
             margin: 0 0 rs($base-lh/2) 0;
         }
 
@@ -197,15 +198,13 @@
             word-wrap: break-word;
         }
         code  {
-            padding: 0 .2em;
-            color: $color-code;
-            background-color: $color-code-background;
+            @include font-size( 15 );
+            padding: 0 .3em;
         }
         pre, .code {
             @include font-size( 14 );
             @include dotty-background();
             color: $color-pre;
-            font-weight: $font-weight-light;
             margin-bottom: rs($base-lh/2);
             padding: rs($base-lh/2) rs($base-lh);
         }

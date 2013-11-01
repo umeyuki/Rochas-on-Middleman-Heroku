@@ -9,7 +9,19 @@ article {
     border-bottom: 1px dotted lighten( $color-text, 50% );
     padding: 0.5em inherit;
     .article-header {
-        margin-bottom: 1.5em;
+        margin-bottom: 2em;
+    }
+    .article-body a {
+        color: $color-three;
+        border-bottom: 1px dotted $color-three;
+        padding-bottom: .1em;
+        &:hover {
+            border-color: $color-one;
+            color: $color-one;
+        }
+        &:active {
+            color: $color-three;;
+        }
     }
 }
 
@@ -72,7 +84,7 @@ article {
     @include button();
     @include transition();
     height: 2em;
-    line-height: 2.2;
+    line-height: 2;
     padding-right: 1.1em;
     padding-left: 1.2em;
     background-color: lighten( $color-one, 81% );
@@ -82,6 +94,11 @@ article {
         &:visited {
             background-color: lighten( $color-one, 70% );
         }
+}
+
+.nav-global {
+    line-height: 1.5em;
+    margin-bottom: -1.7em;
 }
 
 /*  ========================================================================== */
@@ -140,7 +157,7 @@ article {
         @include font-size( 17 );
         float: right;
         letter-spacing: 1.1em;
-        margin: -.2em .5em 0 0;
+        margin: .7em .4em 0 0;
         i {
             color: $color-two;
         }
@@ -156,7 +173,7 @@ article {
     } */
     .copy {
         margin-bottom: 0;
-        padding-left: 5.5em;
+        padding-left: 5em;
         line-height: 2em;
         font-family: $font-family-serif;
     }
