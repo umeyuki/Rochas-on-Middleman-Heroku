@@ -25,7 +25,7 @@ activate :blog do |blog|
 end
 
 # page "blog/*", :layout => :post
-page "/atom.xml", :layout => false
+page "/feed.xml", :layout => false
 
 ###
 # Compass
