@@ -162,7 +162,12 @@ article {
             color: $color-two;
         }
     }
-
+    #twitter-widget-0 {
+        margin: 0 -13px 0 13px;
+    }
+    .fb-like {
+        margin-right: 13px;
+    }
 /*     .nav-tags {
         li::before {
             color: $color-note;
