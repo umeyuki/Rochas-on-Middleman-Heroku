@@ -5,4 +5,3 @@ tags: Middleman, Rails
 layout: post
 description: Middleman + Slim + Herokuでブログをつくりました
 ---
-![Rochas](images/rochas.jpg "Rochas")
