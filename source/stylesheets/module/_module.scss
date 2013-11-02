@@ -76,7 +76,6 @@ article {
     &::after {
         content: '\2192';
         margin-left: .2em;
-        vertical-align: middle;
     }
 }
 
@@ -157,7 +156,7 @@ article {
         @include font-size( 17 );
         float: right;
         letter-spacing: 1.1em;
-        margin: .7em .4em 0 0;
+        margin: .5em .2em 0 0;
         i {
             color: $color-two;
         }

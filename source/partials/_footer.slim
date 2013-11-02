@@ -2,9 +2,9 @@ footer[role="contentinfo"]
   nav.nav-global [role="navigation"]
     ul
       li
-        a href="#{data.site.url}" Blog
+        =link_to "Blog", data.site.url
       li
-        a href="about" About 
+        =link_to "About", "/about/" 
   .sns
     a target="_blank" href="https://twitter.com/rochas_"
       i.icon-twitter

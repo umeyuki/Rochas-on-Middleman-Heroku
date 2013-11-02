@@ -4,7 +4,7 @@ ruby '2.0.0'
 
 gem "middleman", "~> 3.1.5"
 
-# Middleman-Blog Extention
+# Middleman-Blog
 gem "middleman-blog", "~> 3.2.0"
 
 # feed.xml.builder
@@ -24,6 +24,9 @@ gem "nokogiri"
 
 # Slim
 gem "slim"
+
+# ImageOptim
+gem "middleman-imageoptim"
 
 # Heroku
 gem 'heroku'
