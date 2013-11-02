@@ -62,8 +62,6 @@
  
     /*  @group Links */
     /*  ========================================================================== */
-        // Declared: link, visited, hover, active
-
         a {
             text-decoration: none;
             word-wrap: break-word;
@@ -156,6 +154,7 @@
             background: $color-selection;
             text-shadow: none;
         }
+
 
     /*  @group Embedded Content */
     /*  ========================================================================== */

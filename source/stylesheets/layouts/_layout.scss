@@ -1,39 +1,29 @@
-/*  ========================================================================== */
-/*  @group Layout */
-/*  ========================================================================== */
+/* Layout */
+/* ========================================================================== */
 
-    //* { @include box-sizing(border-box); }
-    .content {
-        width: 100%;
-        max-width: 720px;
-        margin: 0 auto;
-
-        @media only screen and (max-width: $breakpoint-mid) {
-            width: 92%;
-        }
+.content {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+//* { @include box-sizing(border-box); }
+    @media only screen and (max-width: $breakpoint-mid) {
+        width: 92%;
     }
-
-
-/*  ========================================================================== */
-/*  @group header */
-/*  ========================================================================== */
-
-   header {
-        top:0;
-        width:100%;
-        text-align: center;
-        font-family: $font-family-serif;
-        margin-bottom: 1.5em;
-        padding-top: 3.5em;
-    }
-
-    section {
-        margin-bottom: 1.8em;
-    }
-
-    footer {
-      width: 100%;
-      background-color: $color-one;
-      color: $color-two;
-      text-align: center;
-    }
+}
+header {
+    top:0;
+    width:100%;
+    text-align: center;
+    font-family: $font-family-serif;
+    margin-bottom: 1.5em;
+    padding-top: 3.5em;
+}
+section {
+    margin-bottom: 1.5em;
+}
+footer {
+  width: 100%;
+  background-color: $color-one;
+  color: $color-two;
+  text-align: center;
+}

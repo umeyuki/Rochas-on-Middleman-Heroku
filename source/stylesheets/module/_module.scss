@@ -1,30 +1,7 @@
-/*  ========================================================================== */
-/*  Modules */
-/*  ========================================================================== */
+/* Modules */
+/* ========================================================================== */
 
-/*  ========================================================================== */
-/*  article  */
-/*  ========================================================================== */
-article {
-    border-bottom: 1px dotted lighten( $color-text, 50% );
-    padding: 0.5em inherit;
-    .article-header {
-        margin-bottom: 2em;
-    }
-    .article-body a {
-        color: $color-three;
-        border-bottom: 1px dotted $color-three;
-        padding-bottom: .1em;
-        &:hover {
-            border-color: $color-one;
-            color: $color-one;
-        }
-        &:active {
-            color: $color-three;;
-        }
-    }
-}
-
+/* header */
 .description {
     width: 100%;
     p {
@@ -35,6 +12,22 @@ article {
         }
     }
 }
+/* article */
+article {
+    border-bottom: 1px dotted lighten( $color-text, 50% );
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.article-header {
+    margin-bottom: 2em;
+}
+
+.article-body a {
+    border-bottom: 1px dotted;
+    padding-bottom: .1em;
+}
+
 .nav-global ul, .nav-tags, .article-tags {
     & > li,
     & > li > a {
@@ -42,7 +35,6 @@ article {
         margin: 0 .5em 0 0;
     }
 }
-
 .article-body ul,
 .nav-archive ul {
     li {
@@ -69,7 +61,6 @@ article {
             content: '/';
             margin-right: 1em; }
 }
-
 .more {
     float: right;
     font-family: $font-family-serif;
@@ -78,7 +69,6 @@ article {
         margin-left: .2em;
     }
 }
-
 .btn {
     @include button();
     @include transition();
@@ -94,92 +84,88 @@ article {
             background-color: lighten( $color-one, 70% );
         }
 }
-
+/* share */
+.share {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+#twitter-widget-0 {
+    margin: 0 -13px 0 13px;
+}
+.fb-like {
+    margin-right: 13px;
+}
+/* navigation */
+.sns {
+    line-height: 2.2em;
+    list-style: none;
+    margin-top: 1.5em;
+    margin-left: -0.4em;
+    i {
+        padding-right: .3em;
+    }
+}
+.icon-twitter, .sns-twitter a:hover {
+    color: #00acee;
+}
+i.icon-rss, .sns-rss a:hover {
+    color: #ee802f;
+}
+/* footer */
 .nav-global {
+    @include font-size( 13.5 );
     line-height: 1.5em;
     margin-bottom: -1.7em;
+    ul {
+        padding-top: .4em;
+        margin-bottom: -.3em;
+    }
+    a {
+        color: $color-two;
+        @include transition();
+    }
+    a:visited {
+        color: $color-two;
+    }
+    a:hover {
+        cursor: pointer;
+        color: $color-link-hover;
+    }
+    a:active {
+        color: $color-link-active;
+    }
 }
-
-/*  ========================================================================== */
-/*  @group Opt-in Typography */
-/*  ========================================================================== */
-   /*  .lead {
-        font-size: 120%;
-        line-height: 1.3;
+.copy {
+    margin-bottom: 0;
+    line-height: 2em;
+    font-family: $font-family-serif;
+}
+/*  .lead {
+    font-size: 120%;
+    line-height: 1.3;
+}
+.note {
+    color: $color-note;
+    font-style: italic;
+    font-size: 80%;
+    margin-bottom: .5em;
+}
+.nav-stacked {
+    & > li {
+        display: list-item;
     }
-
-    .note {
+    & > li > a {
+        display: block;
+    }
+} 
+.nav-tags {
+    li::before {
         color: $color-note;
-        font-style: italic;
-        font-size: 80%;
-        margin-bottom: .5em;
+        content: " / ";
+        margin: 0 .5em 0 .3em;
     }
+    li:first-child::before { content: ""; margin: 0; }
+} */
 
-
-    } */
-
-/*  ========================================================================== */
-/*  @group Navigation */
-/*  ========================================================================== */
-
-
-   /*  .nav-stacked {
-        & > li {
-            display: list-item;
-        }
-        & > li > a {
-            display: block;
-        }
-    } */
-    .nav-global {
-        @include font-size( 13.5 );
-        ul {
-            padding: .4em 0 0 1em;
-            margin-bottom: -.3em;
-        }
-        a {
-            color: $color-two;
-            @include transition();
-        }
-        a:visited {
-            color: $color-two;
-        }
-        a:hover {
-            cursor: pointer;
-            color: $color-link-hover;
-        }
-        a:active {
-            color: $color-link-active;
-        }
-    }
-    .sns {
-        @include font-size( 17 );
-        float: right;
-        letter-spacing: 1.1em;
-        margin: .5em .2em 0 0;
-        i {
-            color: $color-two;
-        }
-    }
-    #twitter-widget-0 {
-        margin: 0 -13px 0 13px;
-    }
-    .fb-like {
-        margin-right: 13px;
-    }
-/*     .nav-tags {
-        li::before {
-            color: $color-note;
-            content: " / ";
-            margin: 0 .5em 0 .3em;
-        }
-        li:first-child::before { content: ""; margin: 0; }
-    } */
-    .copy {
-        margin-bottom: 0;
-        padding-left: 5em;
-        line-height: 2em;
-        font-family: $font-family-serif;
-    }
 
 
