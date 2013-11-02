@@ -105,7 +105,7 @@ set :partials_dir, 'partials'
 configure :build do
   # For example, change the Compass output style for deployment
   activate :gzip
-  activate :imageoptim
+  # activate :imageoptim
   # Minify Javascript on build
   # activate :minify_javascript
 
