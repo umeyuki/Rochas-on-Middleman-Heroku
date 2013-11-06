@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem "middleman", "~> 3.1.5"
+gem "middleman"
 
 # Middleman-Blog
-gem "middleman-blog", "~> 3.2.0"
+gem "middleman-blog"
 
 # feed.xml.builder
 gem "builder"

@@ -19,6 +19,7 @@
 
     body {
         // font: $font-weight-normal #{$base-fs/16*100};
+        font-weight: $font-weight-light;
         line-height: $base-lh/$base-fs*1.2;
     }
 
@@ -45,24 +46,20 @@
 /*  ========================================================================== */
 
     /*  @group Headings */
-    /*  ========================================================================== */
-
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-style: normal;
-            font-weight: normal;
+            font-weight: $font-weight-light;
         }
 
         h1 { font-size: rs(32); margin: 0 0 rs(21,32) 0; }
         h2 { font-size: rs(28); margin: rs(21,28) 0 rs(7,28) 0; }
         h3 { font-size: rs(24); margin: rs(21,24) 0 rs(7,24) 0; }
         h4 { font-size: rs(21); margin: rs(21,21) 0 rs(7,21) 0; }
-        h5 { font-size: rs(18); margin: rs(21,18) 0 rs(7,18) 0; }
-        p { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
+        p { font-size: rs(15); margin: rs(21,15) 0 rs(7,15) 0; }
 
         h2 {line-height: 1.2em;}
  
     /*  @group Links */
-    /*  ========================================================================== */
         a {
             text-decoration: none;
             word-wrap: break-word;
@@ -205,6 +202,7 @@
             @include font-size( 14 );
             @include dotty-background();
             color: $color-pre;
+            line-height: 1.5;
             margin-bottom: rs($base-lh/2);
             padding: rs($base-lh/2) rs($base-lh);
         }
