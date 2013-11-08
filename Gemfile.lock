@@ -149,7 +149,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   heroku
-  middleman
+  middleman (~> 3.2.0)
   middleman-autoprefixer
   middleman-blog
   middleman-imageoptim
