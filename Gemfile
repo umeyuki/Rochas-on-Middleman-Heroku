@@ -25,6 +25,9 @@ gem "nokogiri"
 # Slim
 gem "slim"
 
+# Middleman::Autoprefixer
+gem "middleman-autoprefixer"
+
 # ImageOptim
 gem "middleman-imageoptim"
 

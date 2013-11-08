@@ -95,20 +95,12 @@ $old-ie: false !default;
 // Transform
 // ==========
 @mixin transform {
-  -webkit-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-  -moz-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-  -ms-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-  -o-transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
   transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
 }
 
 // Transition
 // ==========
 @mixin transition {
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  -ms-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
   transition: all 0.7s ease;  
 }
 

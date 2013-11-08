@@ -89,6 +89,8 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 # Reload the browser automatically whenever files change
 activate :livereload
 
+activate :autoprefixer, browsers: ['last 2 versions', 'ie 8', 'ie 9']
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper

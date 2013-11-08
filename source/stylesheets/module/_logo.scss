@@ -8,10 +8,6 @@
     margin-left: auto;
     margin-right: auto;
     &:hover .logo {
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
      &:hover .logo-background {
@@ -39,10 +35,6 @@
     height:124px;
     position: relative;
     @include transition();
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
     .logo-background {
         text-align: center;
