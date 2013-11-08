@@ -84,7 +84,7 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 ###
 
 # Automatic image dimensions on image_tag helper
-activate :automatic_image_sizes
+# activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 activate :livereload
@@ -104,8 +104,8 @@ set :partials_dir, 'partials'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  activate :gzip
-  # activate :imageoptim ---error
+  # activate :gzip
+  activate :imageoptim
 
   # Minify Javascript on build
   # activate :minify_javascript
