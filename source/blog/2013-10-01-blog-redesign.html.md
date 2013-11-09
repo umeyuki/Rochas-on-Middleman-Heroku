@@ -10,4 +10,7 @@ image: "http://rochas.cc/images/rochas.jpg"
 ブログ記事は Markdown で書けて、ライブリロードもできる。  
 ウォッチ、ビルド、デプロイまでをターミナルから一気に行えるところに魅かれ、Middleman と Slim でブログをつくり、Heroku にアップしました。
 
-![Rochas](images/rochas.jpg "Rochas")
+![Middleman](images/middleman.png "Middleman")
+
+### 1. Middlemanとは何か
+[Middleman](http://middlemanjp.github.io/)はRuby製、Sinatraベースの静的サイトジェネレータで、ファイル構造はRuby on Railsによく似ていています。大きな違いはRailsはMVCで構成されているのに対し、MiddlemanにはデータベースやModel、Controllerがなく、Viewだけで構成され、あくまで成果物は静的なHTMLである点です。  
