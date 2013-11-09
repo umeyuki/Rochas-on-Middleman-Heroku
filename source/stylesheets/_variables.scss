@@ -2,24 +2,13 @@
 
 // Colour Scheme
 // =============
-// To avoid confusion with CSS properties,
-// colour scheme variable names use american english _color_
-
-// Main colour palette
-/* 
-$color-primary: #2b306a;
-$color-secondary: #06c0db;
-$color-highlight: #ff9600;
-$color-muted: #eef;
-$color-note: #666; 
-*/
-
 $color-one: #181717;
 $color-two: #f9f9f6;  
 $color-three: #004393;
 $color-four: #DBF1F9;
 $color-five: #c90707;
 // lighten( $color-text, 40% );
+
 // Common colours
 $color-text: $color-one;
 $color-text-alt: $color-two;
@@ -50,13 +39,8 @@ $color-warning: #cf8600;
 $color-important: #d00;
 $color-notice: #66b;
 
-// Hsl
-$color-hsl: hsl(120deg, 80%, 88%);
-
 // Base Sizes
 // ==========
-
-// Included shorthands as these may be used a lot.
 
 $base-font-size: 16;
 $base-line-height: 28;
