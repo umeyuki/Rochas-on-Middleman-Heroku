@@ -4,7 +4,7 @@ meta name="generator" content="Middleman 3.2.0"
 - if current_article.nil?
   / layout
   title ="#{current_page.data.title}#{data.site.title}"
-  meta description=data.site.description
+  meta name="description" content=data.site.description
   meta property="og:title" content=data.site.title
   meta property="og:url" content=data.site.url
   meta property="og:type" content="blog"
@@ -13,7 +13,7 @@ meta name="generator" content="Middleman 3.2.0"
 - else
   / post
   title= "#{current_article.title} - #{data.site.title}"
-  meta description=current_article.data.description
+  meta name="description" content=current_article.data.description
   meta property="og:title" content="#{current_article.title} - #{data.site.title}"
   meta property="og:url" content= "#{data.site.url}#{current_article.url}"
   meta property="og:type" content="article"
