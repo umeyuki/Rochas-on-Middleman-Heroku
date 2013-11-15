@@ -14,13 +14,13 @@ nav.nav-archive [role="navigation"]
         / = articles.size
         / | )
 
-  ul.sns
-    li.sns-twitter
-      a href="https://twitter.com/rochas_" target="_blank"
+  ul.nav-link
+    li.nav-link-twitter
+      = link_to "https://twitter.com/rochas_" , target:"_blank"
         i.icon-twitter
         | @Rochas_
-    li.sns-rss
-      a target="_blank" href="#{data.site.url}/feed.xml"
+    li.nav-link-rss
+      = link_to "#{data.site.url}/feed.xml" , target:"_blank"
         i.icon-rss
         | Feed
 

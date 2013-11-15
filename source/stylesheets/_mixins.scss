@@ -73,7 +73,7 @@ $old-ie: false !default;
 // Box reset
 // =========
 // Reset border, margin, and padding
-@mixin box-reset() {
+@mixin box-reset {
   margin: 0;
   padding: 0;
   border: 0 none;
@@ -82,8 +82,8 @@ $old-ie: false !default;
 // Button
 // ======
 // Base button styles, based on https://github.com/csswizardry/beautons
-@mixin button() {
-  @include box-reset();
+@mixin button {
+  @include box-reset;
   @include inline-block( middle );
   white-space: nowrap;
   font-size: 96%;
@@ -105,7 +105,10 @@ $old-ie: false !default;
 }
 
 @mixin dotty-background {
-  background-color: $color-one;
-  border: 1px dotted $color-two;
-  outline: 1px solid $color-one;
+  background-color: $color-1;
+  border: 1px dotted $color-2;
+  outline: 1px solid $color-1;
+}
+@mixin dotty-border {
+  border-bottom: 1px dotted lighten( $color-text, 50% );
 }

@@ -2,35 +2,35 @@
 
 // Colour Scheme
 // =============
-$color-one: #181717;
-$color-two: #f9f9f6;  
-$color-three: #004393;
-$color-four: #DBF1F9;
-$color-five: #c90707;
+$color-1: #181717;
+$color-2: #f9f9f6;  
+$color-3: #004393;
+$color-4: #DBF1F9;
+$color-5: #c90707;
 // lighten( $color-text, 40% );
 
 // Common colours
-$color-text: $color-one;
-$color-text-alt: $color-two;
-$color-background: $color-two;
-$color-border: $color-three;
+$color-text: $color-1;
+$color-text-alt: $color-2;
+$color-background: $color-2;
+$color-border: $color-3;
 
 // Links
 $color-link-default: $color-text;
 $color-link-visited: $color-text;
-$color-link-hover: $color-three;
-$color-link-active: $color-three;
+$color-link-hover: $color-3;
+$color-link-active: $color-3;
 
 // Code
-$color-code: $color-two;
-$color-code-background: $color-one;
-$color-code-border:$color-two;
-$color-code-outline:$color-one;
+$color-code: $color-2;
+$color-code-background: $color-1;
+$color-code-border:$color-2;
+$color-code-outline:$color-1;
 $color-pre: $color-code;
 $color-pre-background: $color-code-background;
 
 // Selections
-$color-selection: $color-four;
+$color-selection: $color-4;
 
 // Messages
 $color-message: #f4ecbb;
@@ -51,9 +51,9 @@ $base-lh: $base-line-height;
 // Font Stacks
 // ===========
 
+$font-family-display: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
 $font-family-serif: "Crimson Text", Georgia, serif;
-$font-family-display: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif; 
-$font-family-monospace: "courier new",Courier, Consolas, "Liberation Mono", monospace;
+$font-family-monospace: "courier new", Courier, Consolas, "Liberation Mono", monospace;
 $font-family-default: $font-family-display;
 
 

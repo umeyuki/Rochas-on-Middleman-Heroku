@@ -1,0 +1,24 @@
+colors:
+  - var: color-1
+    value:  "181717"
+  - var: color-2
+    value:  "f9f9f6"
+  - var: color-3
+    value:  "004393"
+  - var: color-4
+    value:  "DBF1F9"
+
+sizes:
+  - var: $base-font-size
+    value: 16
+  - var: $base-line-height
+    value: 28
+
+
+families:
+  - var: font-family-display
+    value: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif'
+  - var: font-family-serif
+    value: '"Crimson Text", Georgia, serif'
+  - var: font-family-monospace
+    value: '"courier new", Courier, Consolas, "Liberation Mono", monospace'

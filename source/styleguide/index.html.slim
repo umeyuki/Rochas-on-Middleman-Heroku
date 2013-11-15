@@ -1,0 +1,39 @@
+---
+pageable: true
+per_page: 10
+title: "Style Guide - "
+---
+section.clearfix
+  h2 Brand Colors
+  ul.swatches
+    - for swatch in data.styleguide.colors
+      li class= swatch.var
+        pre
+          = "$" + swatch.var
+          br/
+          = "#" + swatch.value
+
+section.clearfix
+  h2 Typography
+  - for font_size in data.styleguide.sizes
+    dl.guide-description-list
+      dt class= font_size.var
+        code= font_size.var
+      dd = font_size.value
+
+
+  - for font_family in data.styleguide.families
+    dl
+      dt
+        code= "$" + font_family.var
+
+      dd class=font_family.var
+        = font_family.value
+
+section.clearfix
+  h2 Tool
+  ul
+    li Middleman
+    li Heroku
+    li Slim, Markdown, Sass, Yaml
+

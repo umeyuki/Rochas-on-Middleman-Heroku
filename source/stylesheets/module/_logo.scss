@@ -11,11 +11,11 @@
         transform: rotateY(180deg);
     }
      &:hover .logo-background {
-        background-color: $color-two;
-        outline: 1px solid $color-one;
+        background-color: $color-2;
+        outline: 1px solid $color-1;
      }
     &:hover .logo-sign {
-        color: $color-one;
+        color: $color-1;
     }
 }
 
@@ -27,7 +27,7 @@
     @include font-size( 16 );
     font-family: $font-family-serif;
     letter-spacing: 0.24em;
-    color: $color-two;
+    color: $color-2;
 }
 .logo {
     margin: 0 auto 3.5em auto;

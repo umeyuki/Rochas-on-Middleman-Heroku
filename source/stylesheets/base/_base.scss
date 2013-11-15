@@ -35,10 +35,10 @@
     h1,h2,h3,h4,h5,h6 { font-family: $font-family-display; }
 
     /* Alternate font stack */
-    blockquote, figcaption { font-family: $font-family-serif;  }
+    blockquote, figcaption, .font-family-serif { font-family: $font-family-serif;  }
 
     /* Monospace font stack, for code samples and preformatted content */
-    pre, code, kbd, samp { font-family: $font-family-monospace; }
+    pre, code, kbd, samp, .font-family-monospace { font-family: $font-family-monospace; }
 
 
 /*  ========================================================================== */
