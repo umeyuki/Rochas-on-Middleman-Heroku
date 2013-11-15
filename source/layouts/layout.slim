@@ -1,20 +1,22 @@
-= partial "header"
-body class=[page_classes]
-  .container
-    header.header[role="banner"]
-      .logo-wrapper
-        .logo
-          = link_to data.site.url, rel:"home"
-            .logo-background
-        h1.logo-sign ROCHAS
-      .description
-        p= data.site.description
-    .content
-      section
-        main[role="main"]
-          = yield
-        = partial "navigation"
-    = partial "footer"
+doctype html
+html lang="ja-JP"
+  = partial "header"
+  body class=[page_classes]
+    .container
+      header.header[role="banner"]
+        .logo-wrapper
+          .logo
+            = link_to data.site.url, rel:"home"
+              .logo-background
+          h1.logo-sign ROCHAS
+        .description
+          p= data.site.description
+      .content
+        section
+          main[role="main"]
+            = yield
+          = partial "navigation"
+      = partial "footer"
 
     
 

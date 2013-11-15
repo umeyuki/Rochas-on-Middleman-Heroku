@@ -2,13 +2,9 @@
 /* ========================================================================== */
 
 .content {
-    width: 92%;
+    width: 90%;
     max-width: 720px;
     margin: 0 auto;
-//* { @include box-sizing(border-box); }
-    @media only screen and (max-width: $breakpoint-mid) {
-        width: 92%;
-    }
 }
 header {
     top:0;
