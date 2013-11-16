@@ -22,6 +22,9 @@ article {
 
 .article-header {
     margin-bottom: 2em;
+    ul {
+        margin-top: 0;
+    }
 }
 
 .article-body a {
@@ -38,7 +41,7 @@ article {
 }
 .article-body ul,
 .nav-recent,
-.nav-tags {
+.nav-tags  {
     li {
       margin: 0;
       position: relative;

@@ -2,9 +2,8 @@
 // Mixins
 // -------------------------------------------------------- //
 
-// Media Queries
+// Media Queries  http://jakearchibald.github.com/sass-ie/
 // =============
-// @see http://jakearchibald.github.com/sass-ie/
 $fix-mqs: false !default;
 @mixin respond-min($width) {
   @if $fix-mqs {
@@ -55,9 +54,8 @@ $old-ie: false !default;
           box-sizing: $type;
 }
 
-// Inline Block
+// Inline Block http://bit.ly/thoughtbot-bourbon-inline-block
 // ============
-// Custom version of http://bit.ly/thoughtbot-bourbon-inline-block
 @mixin inline-block($alignment: baseline) {
   display: inline-block;
   @if $alignment and $alignment != none {
@@ -72,16 +70,14 @@ $old-ie: false !default;
 
 // Box reset
 // =========
-// Reset border, margin, and padding
 @mixin box-reset {
   margin: 0;
   padding: 0;
   border: 0 none;
 }
 
-// Button
+// Button  https://github.com/csswizardry/beautons
 // ======
-// Base button styles, based on https://github.com/csswizardry/beautons
 @mixin button {
   @include box-reset;
   @include inline-block( middle );
@@ -90,7 +86,6 @@ $old-ie: false !default;
   cursor: pointer;
   overflow: visible;
 }
-
 
 // Transform
 // ==========

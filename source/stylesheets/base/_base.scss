@@ -18,26 +18,24 @@
 /*  ========================================================================== */
 
     body {
-        // font: $font-weight-normal #{$base-fs/16*100};
         font-weight: $font-weight-light;
         line-height: $base-lh/$base-fs;
     }
 
-    /* Default font stack */
-    html,
-    body,
-    button,
-    input,
-    select,
-    textarea { font-family: $font-family-default; }
+    /* Default font */
+    html, body, button, input, select, textarea { font-family: $font-family-default; }
 
-    /* Display font stack */
-    h1,h2,h3,h4,h5,h6 { font-family: $font-family-display; }
+    /* Display font */
+    h1, h2, h3, h4 {
+        font-family: $font-family-display;
+        font-style: normal;
+        font-weight: $font-weight-light;
+    }
 
-    /* Alternate font stack */
+    /* Alternate font */
     blockquote, figcaption, .font-family-serif { font-family: $font-family-serif;  }
 
-    /* Monospace font stack, for code samples and preformatted content */
+    /* Monospace font*/
     pre, code, kbd, samp, .font-family-monospace { font-family: $font-family-monospace; }
 
 
@@ -45,28 +43,22 @@
 /*  @group Typography */
 /*  ========================================================================== */
 
-    /*  @group Headings */
-        h1, h2, h3, h4 {
-            font-style: normal;
-            font-weight: $font-weight-light;
-        }
 
         h1 { font-size: rs(32); margin: 0 0 rs(21,32) 0; }
-        h2 { font-size: rs(28); margin: rs(21,28) 0 rs(7,28) 0; }
-        h3 { font-size: rs(24); margin: rs(21,24) 0 rs(7,24) 0; }
-        h4 { font-size: rs(21); margin: rs(21,21) 0 rs(7,21) 0; }
-        p { font-size: rs(16); margin: rs(21,16) 0 rs(7,16) 0; }
+        h2 { font-size: rs(28); margin: rs(21,28) 0 0 0; }
+        h3 { font-size: rs(24); margin: rs(21,24) 0 0 0; }
+        h4 { font-size: rs(21); margin: rs(21,21) 0 0 0; }
+        p { font-size: rs(16); margin: rs(21,16) 0 0 0; }
+        ul, ol, dl { margin: rs($base-lh/2) 0 rs($base-lh/2) 0;}
+        ul, li, ol, dl { padding: 0; }
+        ul li {list-style: none; }
 
-        h2 {line-height: 1.2em;}
-        h3 {line-height: 1.3em;}
-
- 
     /*  @group Links */
         a {
             text-decoration: none;
             word-wrap: break-word;
-    
         }
+
         a:focus { outline: thin dotted; }
         a:hover, a:active { outline: 0; }
 
@@ -88,22 +80,6 @@
     /*  @group Text Level Elements */
     /*  ========================================================================== */
 
-        /* Default margins */
-        ul, ol, dl {
-            margin: 0 0 rs($base-lh/2) 0;
-        }
-
-        /* Lists */
-        ul, li, ol, dl            { padding: 0; }
-        // ul ul, ol ol, dl dl   { margin-bottom: 0; }
-        // ul li, ol li          { margin-left: rs($base-lh,$base-fs); }
-        ul li                 {list-style: none; }
-        // ol li                 { list-style: outside decimal; }
-        // ul li ul              { margin: rs($base-lh/2) 0 0 rs($base-fs); }
-        // dl dt                 { font-weight: bold; }
-        // dl dd                 { margin: 0 0 rs($base-fs) 0; }
-
-
         /* Text Marking */
         b, strong, mark { font-weight: bold; }
         /* dfn, mark { font-style: italic; }
@@ -117,7 +93,7 @@
         abbr[title], dfn[title] {
             cursor: help;
             border-bottom: 1px dotted; 
-        }*/
+        }
 
         // Position subscript and superscript content without affecting line-height: h5bp.com/k
         sub, sup {
@@ -127,7 +103,7 @@
             vertical-align: baseline;
         }
         sup { top: -0.5em; }
-        sub { bottom: -0.25em; }
+        sub { bottom: -0.25em; }*/
 
         /*
          * A better looking default horizontal rule
@@ -161,7 +137,7 @@
 
         img { vertical-align: middle; }
 
-        /* _width hack is for IE6 and below */
+        /* _width hack is for IE6 */
         img, embed, object, video { max-width: 90%; _width: 90%; display: block; margin: 0 auto;
             @media only screen and (max-width: $breakpoint-mid) {
             max-width: 95%; _width: 95%
@@ -183,10 +159,6 @@
         q { quotes: none; }
         q:before, q:after { content: ""; content: none; }
         q, cite, blockquote { font-style: italic; }
-
-        blockquote {
-
-        }
 
     /*  @group Code */
     /*  ========================================================================== */

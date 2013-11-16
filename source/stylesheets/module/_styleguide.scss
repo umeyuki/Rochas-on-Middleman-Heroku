@@ -2,54 +2,50 @@
 $color-var: color-1, color-2, color-3, color-4;
 $color-value: $color-1, $color-2, $color-3, $color-4;
 
+  @each $class-color in $color-var {
+      $index-key: index($color-var, $class-color);
 
-@each $class-color in $color-var {
-    $index-key: index($color-var, $class-color);
+      .#{$class-color} {
+          background-color: nth($color-value, $index-key);
+      }
 
-    .#{$class-color} {
-        background-color: nth($color-value, $index-key);
-    }
-
-section {
-
-}
-
-.color-1 {
-  color: $color-2
-}
-
-.swatches {
-  pre {
-    background: inherit;
-    border: 0;
-    outline-color: lighten( $color-1, 80% );
-    color: inherit;
-    display: inline-block;
-    float: left;
-    margin-right: 1.2em;
-    padding: 1.5em 2.2em
+  .color-1 {
+    color: $color-2
   }
-}
 
-dt, dd {
-  display: table-cell;
-}
-dt {
-  width: 16em;
-      @media only screen and (max-width: $breakpoint-mid) {
-        width: 10em;
+  .swatches {
+    pre {
+      background: inherit;
+      border: 0;
+      outline-color: lighten($color-1, 80%);
+      color: inherit;
+      display: inline-block;
+      float: left;
+      margin-right: 1.2em;
+      padding: 1.5em 2.2em
     }
-}
-.nav-archive {
-  border-top: 1px dotted lighten( $color-text, 50% );
-}
-h2 {
-line-height: 1.5em;
-}
-}
+  }
+  .color-variable {
+    clear: both;
+  }
+  dt, dd {
+    display: table-cell;
+  }
+  dt {
+    width: 16em;
+        @media only screen and (max-width: $breakpoint-mid) {
+          width: 10em;
+          vertical-align: middle;
+      }
+  }
 
-
-
+  .nav-archive {
+    border-top: 1px dotted lighten( $color-text, 50% );
+  }
+    h2 {
+    line-height: 1.5em;
+    }
+  }
 }
 
 .styleguide {

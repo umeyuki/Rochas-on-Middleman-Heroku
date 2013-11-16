@@ -8,12 +8,21 @@ colors:
   - var: color-4
     value:  "DBF1F9"
 
-sizes:
-  - var: $base-font-size
-    value: 16
-  - var: $base-line-height
-    value: 28
+variable:
+  - var: color-text
+    value: color-1
+  - var: color-background
+    value: color-2
+  - var: color-link-hover
+    value: color-3
+  - var: color-selection
+    value: color-4
 
+sizes:
+  - var: base-font-size
+    value: 16
+  - var: base-line-height
+    value: 28
 
 families:
   - var: font-family-display
@@ -22,3 +31,11 @@ families:
     value: '"Crimson Text", Georgia, serif'
   - var: font-family-monospace
     value: '"courier new", Courier, Consolas, "Liberation Mono", monospace'
+
+rhythm:
+  - value: "h1 {font-size: rs(32); margin: 0 0 rs(21,32) 0;}"
+  - value: "h2 {font-size: rs(28); margin: rs(21,28) 0 0 0;}"
+  - value: "h3 {font-size: rs(24); margin: rs(21,24) 0 0 0;}"
+  - value: "h4 {font-size: rs(21); margin: rs(21,21) 0 0 0;}"
+  - value: "p {font-size: rs(16); margin: rs(21,16) 0 0 0;}"
+  - value: "ul, ol, dl {margin: rs($base-lh/2) 0 0 0;}"
