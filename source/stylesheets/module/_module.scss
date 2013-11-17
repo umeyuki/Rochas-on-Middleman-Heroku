@@ -67,7 +67,6 @@ article {
 }
 .more {
     float: right;
-    font-family: $font-family-serif;
     &::after {
         content: '\2192';
         margin-left: .2em;
@@ -149,7 +148,6 @@ i.icon-rss, .nav-link-rss a:hover {
 .copy {
     margin-bottom: 0;
     line-height: 2.6em;
-    font-family: $font-family-serif;
 }
 
 /*  .lead {
