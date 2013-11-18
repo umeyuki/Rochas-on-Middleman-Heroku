@@ -1,34 +1,20 @@
 @charset "utf-8";
 
-// Compass Plugins
-// ===============
-
-// Optional, if you are using Compass
-//@import "compass/utilities", "compass/css3";
-
 // Sass Features
-// =============
-
-@import "variables", "functions", "mixins","state","fontawesome";
+// -------------------------
+@import "variables", "functions", "mixins","state";
 
 
 // The Styles
-// ==========
-// Styles are defined in the following order & groupings:
-// Base, Layout, Module, State
-
-// Base styles (reset + elements)
+// -------------------------
+// - Base = normalize + base
+// - Layout = header, section, footer.
+// - Module = article, navi,  widgets etc.
+// - State = script + overrides styles
+// - theme  = styleguide, fontawesome
 @import "base/normalize", "base/base";
-
-// Layout
-// ======
-// - Layout = major components, e.g., header, footer etc.
-// - Module = minor components, e.g., navigation bar, callout, widgets etc.
-// - State  = a state is something that augments + overrides all other styles, e.g., success or error state
-
 @import "layouts/layout";
-@import "module/module";
-@import "module/logo";
-@import "module/styleguide";
+@import "module/module", "module/logo";;
+@import "theme/styleguide","theme/fontawesome";
   
 

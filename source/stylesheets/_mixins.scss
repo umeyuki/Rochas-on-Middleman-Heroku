@@ -3,7 +3,7 @@
 // -------------------------------------------------------- //
 
 // Media Queries  http://jakearchibald.github.com/sass-ie/
-// =============
+// -------------------------
 $fix-mqs: false !default;
 @mixin respond-min($width) {
   @if $fix-mqs {
@@ -37,9 +37,8 @@ $old-ie: false !default;
   }
 }
 
-// Font-size
-// =========
-// rem font-size with px fallback
+// Font-size - fallback rem to px
+// -------------------------
 @mixin font-size( $value ) {
   font-size: ( $value ) * 1px;
   font-size: ( $value / $base-font-size ) * 1rem;
@@ -54,8 +53,8 @@ $old-ie: false !default;
           box-sizing: $type;
 }
 
-// Inline Block http://bit.ly/thoughtbot-bourbon-inline-block
-// ============
+// Inline Block - http://bit.ly/thoughtbot-bourbon-inline-block
+// -------------------------
 @mixin inline-block($alignment: baseline) {
   display: inline-block;
   @if $alignment and $alignment != none {
@@ -69,15 +68,15 @@ $old-ie: false !default;
 }
 
 // Box reset
-// =========
+// -------------------------
 @mixin box-reset {
   margin: 0;
   padding: 0;
   border: 0 none;
 }
 
-// Button  https://github.com/csswizardry/beautons
-// ======
+// Button
+// -------------------------
 @mixin button {
   @include box-reset;
   @include inline-block( middle );
@@ -88,13 +87,13 @@ $old-ie: false !default;
 }
 
 // Transform
-// ==========
+// -------------------------
 @mixin transform {
   transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
 }
 
 // Transition
-// ==========
+// -------------------------
 @mixin transition {
   transition: all 0.7s ease;  
 }

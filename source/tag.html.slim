@@ -16,10 +16,16 @@ h2
   - if prev_page
     p
       = link_to 'Previous page', prev_page
-ul
-  - page_articles.each_with_index do |article, i|
-    li
-      = link_to article.title, article
+
+- page_articles.each_with_index do |article, i|
+  article
+    .article-header
+      h2 = link_to article.title, article
+      time datetime= article.date.strftime('%Y-%m-%d') = article.date.strftime('%B %e, %Y')
+      ul.article-tags
+        - article.tags.each do |tag|
+          li
+            = link_to tag, tag_path(tag)
 - if paginate
   - if next_page
     p

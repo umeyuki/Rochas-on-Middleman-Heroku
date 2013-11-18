@@ -3,72 +3,74 @@ pageable: true
 per_page: 10
 title: "Style Guide - "
 ---
-h2 Style Guide
+.styleguide-body 
+  h2 Style Guide
+  p
+  | このブログは、読むことと書くことに集中できるようにシンプルに仕上げました。Ruby製のサイトジェネレータMiddlemanでつくった静的ファイルをgzip化し、Herokuにアップしています。 テンプレートはSlim、記事はMarkdownで書き、スタイルにはSassを使っています。
+  section.clearfix
+    h3 Brand Colors
+    ul.swatches
+      - for swatch in data.styleguide.colors
+        li class= swatch.var
+          pre
+            = "$" + swatch.var
+            br/
+            = "#" + swatch.value
 
-section.clearfix
-  h3 Brand Colors
-  ul.swatches
-    - for swatch in data.styleguide.colors
-      li class= swatch.var
-        pre
-          = "$" + swatch.var
-          br/
-          = "#" + swatch.value
-
-  ul.color-variable
-    - for color_variable in data.styleguide.variable
-      li
-        code= code= "$" +"#{color_variable.var}: #{color_variable.value}" +";"
+    ul.color-variable
+      - for color_variable in data.styleguide.variable
+        li
+          code= code= "$" +"#{color_variable.var}: #{color_variable.value}" +";"
 
 
-section.clearfix
-  h3 Font
-  - for font_family in data.styleguide.families
-    dl
-      dt
-        code= "$" + "#{font_family.var}" +":"
+  section.clearfix
+    h3 Font
+    - for font_family in data.styleguide.families
+      dl
+        dt
+          code= "$" + "#{font_family.var}" +":"
 
-      dd class=font_family.var
-        = "#{font_family.value}" +";"
+        dd class=font_family.var
+          = "#{font_family.value}" +";"
 
-section.clearfix
-  h3 Typography
-  ul
-    - for font_size in data.styleguide.sizes
-      li
-        code= "$" +"#{font_size.var}: #{font_size.value}"+";"
+  section.clearfix
+    h3 Typography
+    ul
+      - for font_size in data.styleguide.sizes
+        li
+          code= "$" +"#{font_size.var}: #{font_size.value}"+";"
 
-  ul
-    - for vertical_rhythm in data.styleguide.rhythm
-      li
-        code= vertical_rhythm.value
+    ul
+      - for vertical_rhythm in data.styleguide.rhythm
+        li
+          code= vertical_rhythm.value
 
-section.clearfix
-  h3 Development
-  ul
-    li Ruby 2.0.0
-    li Bundler
-    li = link_to "Middleman", "http://middlemanapp.com/"
-    li = link_to "Heroku" , "https://www.heroku.com/"
-    li = link_to "Slim", "http://slim-lang.com/"
-    li = link_to "Sass", "http://sass-lang.com/"
-    li = link_to "Markdown", "http://daringfireball.net/projects/markdown/"
-    li = link_to "Google Web Fonts [Crimson Text]", "http://www.google.com/fonts/specimen/Crimson+Text"
-    li = link_to "Font Awesome", "http://fontawesome.io/"
-    li = link_to "The W3C Markup Validation Service", "http://validator.w3.org/"
-    li = link_to "WAI-ARIA [Landmark Roles]", "http://www.w3.org/TR/wai-aria/roles#landmark_roles"
+  section.clearfix
+    h3 Development
+    ul
+      li Ruby 2.0.0
+      li Bundler
+      li = link_to "Middleman", "http://middlemanapp.com/"
+      li = link_to "Heroku" , "https://www.heroku.com/"
+      li = link_to "Slim", "http://slim-lang.com/"
+      li = link_to "Sass", "http://sass-lang.com/"
+      li = link_to "Markdown", "http://daringfireball.net/projects/markdown/"
+      li = link_to "Google Web Fonts [Crimson Text]", "http://www.google.com/fonts/specimen/Crimson+Text"
+      li = link_to "Font Awesome", "http://fontawesome.io/"
+      li = link_to "The W3C Markup Validation Service", "http://validator.w3.org/"
+      li = link_to "WAI-ARIA [Landmark Roles]", "http://www.w3.org/TR/wai-aria/roles#landmark_roles"
 
-section.clearfix
-  h3 Design Concept
-  p このブログは、読むことと書くことに集中できるようにシンプルに仕上げました。Ruby製のサイトジェネレータMiddlemanでつくった静的ファイルをgzip化して、Herokuにアップしています。テンプレートはSlim、記事はMarkdownで書き、スタイルにはSassを使っています。
-  p 1columnのFluid Layoutで、左右にマージンをたっぷりめにとりました。なるべくリフローを抑えるために、スマートフォン向けにbreakpointでスタイルを切り分けたりはせず、viewportだけを指定しています。
-  p 文字色には墨黒と黒のあいだの黒、背景色には限りなく白に近い白を選びました。アクセントにブルーを系を2色使っています。これは配色の理論というよりは感覚による部分が多く。。つくりながら何回も色を変えて、最終的に選んだ色です。なので柔軟に変更できるようにSassの変数で管理しています。
-  p 文字組にはVertical Rhythmを取り入れようとSassで計算しているのですが、日本語なので文字がパツパツになってしまったり、タイトルなどfont-sizeが大きい文字が改行されるとline-heightの隙間が空きすぎてしまいうまくいかない。なのでVertical Rhythmを少し調整してみました。
-  p 元々Vertical RhythmはDTPの技術であり、それをWebにとり入れようと、様々な研究がなされてきました。
-  ul
-    li = link_to "Setting Type on the Web to a Baseline Grid · An A List Apart Article", "http://alistapart.com/article/settingtypeontheweb"
-    li = link_to "Single-direction margin declarations – CSS Wizardry", "http://csswizardry.com/2012/06/single-direction-margin-declarations/" 
-  p デフォルトスタイルのresetや、px?em?rem?、:last-childなど例外のmarginなどについて言及されていてとても興味深く、今では計算ツールやJSライブラリCompassでも提供されています。しかしそれでも昨今のスマートフォンなど様々なデバイスで美しい文字を表現するのは難しい。文字組はフォント選びはもちろん、グリッドレイアウトと切っても切り離せない関係にあるので、このあたりについては深く学びたいと思っています。
+  section.clearfix
+    h3 Design Concept
+    p レイアウトは1columnのFluid Layoutで、左右にマージンをたっぷりめにとりました。
+    p Media Queriesでスマートフォンに対応していますが、なるべくリフローを抑えるために、breakpointでスタイルを切り分けたりはせず、viewportだけを指定しています。
+    p 配色はテキストカラーに墨黒と黒のあいだの黒、背景カラーには限りなく白に近い白を選びました。アクセントとしてリンクカラーとセレクトカラーにブルーを系を使っていますがほとんど出てきませんね。これは配色の理論というよりは感覚による部分が多く。。つくりながら何回も色を変えて、最終的に選んだ色です。なので柔軟に変更できるようにSassの変数で管理しています。
+    p 文字組にはVertical RhythmをSassで計算しているのですが、日本語なので文字がパツパツになってしまったり、タイトルなどfont-sizeが大きい文字が改行されるとline-heightの間隔が空きすぎてしまいうまくいかない。なのでVertical Rhythmを少し調整してみました。
+    p 元々Vertical RhythmはDTPの技術であり、それをWebのスタイルシートで表現しようと、様々な研究がなされてきました。
+    ul
+      li = link_to "Setting Type on the Web to a Baseline Grid · An A List Apart Article", "http://alistapart.com/article/settingtypeontheweb"
+      li = link_to "Single-direction margin declarations – CSS Wizardry", "http://csswizardry.com/2012/06/single-direction-margin-declarations/" 
+    p 古くはデフォルトスタイルのresetに始まり、px? em? rem?、:last-childなど例外のmarginなどについて言及されていてとても興味深く、最近では計算ツールやJSライブラリCompassでも提供されています。しかしそれでも昨今のスマートフォンなど様々なデバイスで美しい文字を表現するのは難しい。文字組はフォント選びはもちろん、グリッドレイアウトと切っても切り離せない関係にあるので、このあたりについては深く学びたいと思っています。
 
 
 

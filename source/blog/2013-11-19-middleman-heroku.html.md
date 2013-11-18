@@ -1,22 +1,22 @@
 ---
 title: Middleman + Slim + Herokuでブログをつくりました
-date: 2013-11-18
+date: 2013-11-19
 tags: Middleman
-description: Middleman + Slim + Herokuでブログをつくりました
+description: Middleman + Slim + Herokuでブログをつくるチュートリアルをご紹介します。
 image: "http://rochas.cc/images/middleman.png"
 ---
 
 記事はMarkdownで書いて、ビルド、デプロイまでを一気に行えるところに魅かれ、Middlemanでブログをリデザイン、Herokuにアップしました。
-
-![Middleman](http://rochas.cc/images/middleman.png)
 
 ### 1. 静的サイト、ビルドツールとしてのMiddleman
 [Middleman](http://middlemanjp.github.io/)はRuby製、Sinatraベースの静的サイトジェネレータです。Ruby on RailsのViewによく似ていますが、Model、Controllerはなく、ビルドした成果物はあくまでも静的なHTMLです。  
 データベースがない分シンプルでありながらも、Rubyで動的な値が呼び出せたり、Railsのロジックが使えるため、HTMLをより効率的に書くことができたり、ブログにも拡張できます。
 またMiddlemanはビルドツールとしての機能も持ち合わせています。
 
+![Middleman](http://rochas.cc/images/middleman.png)
+
 * layout、template、partialでページが構成され、共通部分をまとめることができる。  
-* 変数やループ、条件分岐などRubyの文法が使える。  
+* デフォルト言語はERBとし、変数やループ、条件分岐などRubyの文法が使える。  
 * ERBの他、Haml、Slim、Sass、Less、Stylus、CoffeeScript、Markdownなどの言語が使える。  
 * LiveReloadで自動コンパイルできる。  
 * ```link_to```や```stylesheet_link_tag```などRailsのTemplate Helpersが使える。
@@ -30,7 +30,7 @@ image: "http://rochas.cc/images/middleman.png"
 Herokuに独自ドメインを割り当て```rochas.herokuapp.com```にアクセスがあったら```rochas.cc```にリダイレクトさせるようRack::Rewriteで指定しています。  
 
 
-では実際にどのようにカスタマイズしたかをご紹介したいと思います。  
+では実際にどのようにつくったかを少しご紹介したいと思います。  
 環境: Ruby2.0.0以上、bundler
 
 
@@ -97,10 +97,8 @@ myproject
 管理画面は存在しないのでターミナルとエディタだけでつくっていきます。  
 ```.gitignore```も含まれているのでここで```$ git init``` 。  
 
-いよいよカスタマイズしていきます。Gemから色々な機能を追加していくとテンション上がるので、まずは``Gemfile``と``config.rb``を開いてみてください。完成予想図はこちら。  
-
-* [Rochas-on-Middleman-Heroku / Gemfile](https://github.com/DressCording/Rochas-on-Middleman-Heroku/blob/master/Gemfile)  
-* [Rochas-on-Middleman-Heroku / config.rb](https://github.com/DressCording/Rochas-on-Middleman-Heroku/blob/master/config.rb)
+いよいよカスタマイズしていきます。Gemから色々な機能を追加していくとテンション上がるので、まずは``Gemfile``と``config.rb``を触ってみます。このBlogの完成予想図はこちら。  
+[Gemfile](https://github.com/DressCording/Rochas-on-Middleman-Heroku/blob/master/Gemfile) / [config.rb](https://github.com/DressCording/Rochas-on-Middleman-Heroku/blob/master/config.rb)
 
 ### 6. Blogの設定をする
 
@@ -139,7 +137,11 @@ end
 
 * ```blog.default_extension = ".md"```とするとMarkdownの拡張子が変更されます。  
 
-もし何も設定しなければ実際のディレクトリ通りになり```config.rb```から設定した場合は実際のディレクトリより優先して適用されます。また各ページのFrontmatterからページ毎に設定することもでき、その場合にはFrontmatterが最優先されます。
+もし何も設定しなければビルド後のサイトマップは、実際のディレクトリ通りになり、```config.rb```から設定変更した場合は実際のディレクトリより優先して適用されます。また各ページのFrontmatterからページ毎に設定することもでき、その場合にはFrontmatterが最優先されます。  
+デフォルト  →  ```config.rb``` → Frontmatter  
+の順に優先度が高くなり、サイトマップを自在に上書きするこどができるのです。  
+
+ビルド後のサイトマップを確認したい時は```http://0.0.0.0:4567/__middleman/sitemap/```から確かめることができます。  
 
 ### 7. LiveReloadを使う
 LiveReloadはブラウザの自動反映や、Sassなどの自動コンパイルを行ってくれます。  
@@ -166,7 +168,7 @@ gem "slim", "~> 2.0.2"
 $ bundle install
 ```
 
-```config.rb``` にオプションを設定。```id```や```class```にショートカットを割り当てています。
+```config.rb``` にオプションを設定。```id class```を```# .```とショートカットで書けるようにします。
 
 
 ```ruby
@@ -183,7 +185,7 @@ Slim::Engine.set_default_options :shortcut => {
 
 これでSlimが書けるようになります。でもデフォルトで生成された  
 ```index.html.erb```、```calendar.html.erb```、```tag.html.erb```、```layout.erb```の4つのファイルは既にERBで書かれているので直さなければなりません。  
-そこで [HTML2Slim](http://html2slim.herokuapp.com/)（変換ツール）か、[slim-template/html2slim](https://github.com/slim-template/html2slim)（Gem）使って変換してみます。  
+そこで [HTML2Slim](http://html2slim.herokuapp.com/)（変換ツール）か、[slim-template / html2slim](https://github.com/slim-template/html2slim)（Gem）使って変換してみます。  
 ターミナルからGemをインストール。  
 
 ```sh
@@ -195,8 +197,9 @@ $ gem install html2slim
 $ erb2slim index.html.erb index.html.slim
 ```
 
-何箇所かエラーがでるのでそこは自力で修正。便利だけど頼りすぎはよくない。
-
+何箇所かエラーがでるのでそこは自力で修正。便利だけど頼りすぎはよくない。。  
+Slimは[公式ドキュメント](http://rdoc.info/gems/slim/frames)か翻訳版の[yterajima / slim](https://github.com/yterajima/slim/tree/README_ja) で学びました。  
+ポイントはインデント、パイプそして「RailsっぽいSlim」を書くことです。例えばHelperをつかったり、Yamlに変数をつくったりするとよさそう。
 
 
 ### 9. RedcarpetでMarkdownを書く
@@ -247,29 +250,33 @@ activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
 [RubyGem](http://rubygems.org/gems/middleman-autoprefixer) / [Github](https://github.com/porada/middleman-autoprefixer)
 
 ### 12. minify、gzipでパフォーマンスの最適化
-minify、gzipはビルド時に実行される機能で、```config.rb```の下のほうにある```build```メソッドのブロック内のコメントを解除するだけで有効になります。
+minify、gzipはビルド時に実行される機能で、```config.rb```の下のほうにある```build```メソッドのブロック内のコメントを解除するだけで有効になります。  
 
 ```ruby
 activate :minify_javascript
 activate :minify_css
 activate :gzip
 ```
+こうしたビルドツールが簡単に使えるのはMiddlemanの強み❤  
 
 ### 13. ビルドする
 ```sh
 $ bundle exec middleman build
 ```
-ターミナルから```build```コマンドを実行すると、ルートディレクトリにbuildフォルダが生成されます。中身は```index.html.gz```という拡張子のついた、gzip化された静的ファイルであることが確認できると思います。このフォルダをデプロイすれば完成です。
+ターミナルから```build```コマンドを実行すると、ルートディレクトリにbuildフォルダが生成されます。中身は```index.html.gz```という拡張子のついた、gzip化された静的ファイルであることが確認できると思います。完成したらこのフォルダをデプロイすればよいのです！
 
 
 ### 14. Middlemanそして#p4d   
-今回ブログを公開できたのは[#p4d](http://prog4designer.github.io/)の存在が大きかった。  
-オーガナイザーの[@satococoa](https://twitter.com/satococoa)さん、[@tatsuoSakurai](https://twitter.com/tatsuoSakurai)さん、[@tkawa](https://twitter.com/tkawa)さん、Fuchiwakiさんがコーチになってくださり、ソースコードをRails風にリファクタリングしたり、Gitを使ったHerokuへのデプロイ、rackベースのサーバーのリダイレクトなど色々なことを学ばせていただきました。  
-これらはMiddlemanに限ったことではなく、ワークフローの見直しにもなりましたし、
-RailsのViewにデザインを入れることを学びたい私にとって大変貴重な経験となりました。本当にありがとうございます。
+今回はGemで機能を追加するまでを書きましたが、この後はテンプレートを編集し、デプロイ環境をつくっていきました。  
+[たのしいRuby](http://www.amazon.co.jp/%E3%81%9F%E3%81%AE%E3%81%97%E3%81%84Ruby-%E7%AC%AC3%E7%89%88-%E9%AB%98%E6%A9%8B-%E5%BE%81%E7%BE%A9/dp/4797357401)を読んでみたり、Rails情報を検索してみたり。。まだまだMiddlemanの情報が少ないせいもあるけど、独自ドメインを取ったあたりから、結構はまってしまいました。  
+
+なのでブログを公開できたのは[#p4d](http://prog4designer.github.io/)の存在が大きかった。気持ち的にも。  
+オーガナイザーの[@satococoa](https://twitter.com/satococoa)さん、[@tatsuoSakurai](https://twitter.com/tatsuoSakurai)さん、[@tkawa](https://twitter.com/tkawa)さん、[Fuchiwaki](https://www.facebook.com/daisuke.fuchiwaki)さんがコーチになってくださり、ソースコードをRails風にリファクタリングしたり、Gitを使ったHerokuへのデプロイ、rackベースのサーバーのリダイレクトなど色々なことを学ばせていただきました。  
+これらはMiddlemanに限ったことではなく、RailsのViewにデザインを入れることを学びたい私にとって大変貴重な経験となりました。またワークフローの見直しにもなり、よりよい環境でデザインやコードを書けることの楽しさを知りました。本当にありがとうございます！  
+[Tokyo Middleman Meetup #1](http://connpass.com/event/3851/)にも参加します。Middlemanの公式サイトやSlimドキュメントを翻訳してくださった[@yterajima](https://twitter.com/yterajima)を始め、先駆者の方々が登壇されるとのことで今から楽しみ！  
 
 
 このブログのデザインコンセプト、フォントや配色、使ったツールなどについては[Style Guide](http://rochas.cc/styleguide/)ページに書きました。
 ソースはGithubで公開しています。  
 
-* [Rochas-on-Middleman-Heroku](https://github.com/DressCording/Rochas-on-Middleman-Heroku)
+* [Rochas-on-Middleman-Heroku](https://github.com/DressCording/Rochas-on-Middleman-Heroku)  

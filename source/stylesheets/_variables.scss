@@ -1,27 +1,28 @@
+// -------------------------------------------------------- //
 // Variables
+// -------------------------------------------------------- //
 
 // Colour Scheme
-// =============
+// -------------------------
+/* Brand Colors */
 $color-1: #181717;
 $color-2: #f9f9f6;  
 $color-3: #004393;
 $color-4: #DBF1F9;
-$color-5: #c90707;
-// lighten( $color-text, 40% );
 
-// Common colours
+/* Base Colors */
 $color-text: $color-1;
 $color-text-alt: $color-2;
 $color-background: $color-2;
 $color-border: $color-3;
 
-// Links
+/* Link Colors */
 $color-link-default: $color-text;
 $color-link-visited: $color-text;
 $color-link-hover: $color-3;
 $color-link-active: $color-3;
 
-// Code
+/* Code Colors */
 $color-code: $color-2;
 $color-code-background: $color-1;
 $color-code-border:$color-2;
@@ -29,31 +30,25 @@ $color-code-outline:$color-1;
 $color-pre: $color-code;
 $color-pre-background: $color-code-background;
 
-// Selections
+/* Selection Colors */
 $color-selection: $color-4;
 
 
-// Base Sizes
-// ==========
-
+// Font
+// -------------------------
+/* Font Size */
 $base-font-size: 16;
 $base-line-height: 28;
 $base-fs: $base-font-size;
 $base-lh: $base-line-height;
 
-
-// Font Family
-// ===========
-
+/* Font Family */
 $font-family-display: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
 $font-family-serif: "Crimson Text", Georgia, serif;
 $font-family-monospace: "courier new", Courier, Consolas, "Liberation Mono", monospace;
 $font-family-default: $font-family-display;
 
-
-// Font Weights
-// ============
-
+/* Font Weights */
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-semibold: 700;
@@ -61,8 +56,7 @@ $font-weight-bold: 900;
 
 
 // Breakpoints
-// ===========
-
+// -------------------------
 $breakpoint-narrow: 36em;
 $breakpoint-mid: 48em;
 $breakpoint-wide: 60em;

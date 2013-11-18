@@ -1,213 +1,135 @@
-/*  ========================================================================== */
-/*  @group Base */
-/*  ========================================================================== */
+// -------------------------------------------------------- //
+// Base
+// -------------------------------------------------------- //
 
-/*  ========================================================================== */
-/*  @group Global Colors */
-/*  ========================================================================== */
+body {
+    color: $color-text;
+    background-color: $color-background;
+    -webkit-tap-highlight-color:rgba(219, 241, 249, .8);
+    font-weight: $font-weight-light;
+    line-height: $base-lh/$base-fs;
+}
 
-    body {
-        color: $color-text;
-        background-color: $color-background;
-        -webkit-tap-highlight-color:rgba(219, 241, 249, .8);
+// Font Family
+// -------------------------
+/* Default font */
+html, body, button, input, select, textarea { font-family: $font-family-default; }
+
+/* Display font */
+h1, h2, h3, h4 {
+    font-family: $font-family-display;
+    font-style: normal;
+    font-weight: $font-weight-light;
+}
+
+/* Alternate font */
+blockquote, figcaption, .font-family-serif { font-family: $font-family-serif;  }
+
+/* Monospace font*/
+pre, code, kbd, samp, .font-family-monospace { font-family: $font-family-monospace; }
+
+
+// Vertical Ryhtnm
+// -------------------------
+h1 { font-size: rs(32); margin: 0 0 rs(21,32) 0; }
+h2 { font-size: rs(28); margin: rs(21,28) 0 0 0; }
+h3 { font-size: rs(24); margin: rs(21,24) 0 0 0; }
+h4 { font-size: rs(21); margin: rs(21,21) 0 0 0; }
+p { font-size: rs(16); margin: rs(21,16) 0 0 0; }
+ul, ol, dl { margin: rs($base-lh/2) 0 rs($base-lh/2) 0;}
+ul, li, ol, dl { padding: 0; }
+ul li {list-style: none; }
+
+
+// Link Style
+// -------------------------
+a {
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+a {
+    color: $color-link-default;
+    @include transition();
+}
+a:visited {
+    color: $color-link-visited;
+}
+a:hover {
+    cursor: pointer;
+    color: $color-link-hover;
+}
+a:active {
+    color: $color-link-active;
+}
+
+
+// Text Style
+// -------------------------
+b, strong, mark { font-weight: bold; }
+
+
+// Code Style
+// -------------------------
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+code  {
+    @include font-size( 15 );
+    padding: 0 .3em;
+}
+pre, .code {
+    @include font-size( 14 );
+    @include dotty-background();
+    color: $color-pre;
+    line-height: 1.5;
+    margin-bottom: rs($base-lh/2);
+    padding: rs($base-lh/2) rs($base-lh);
+}
+pre code, .code code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.code li {
+    list-style-type: decimal-leading-zero;
+}
+
+
+// Selection Style
+// -------------------------
+::-moz-selection {
+    background: $color-selection;
+    text-shadow: none;
+}
+::selection {
+    background: $color-selection;
+    text-shadow: none;
+}
+
+
+// Quotes Style
+// -------------------------
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+q, cite, blockquote { font-style: italic; }
+
+
+// Img Style
+// -------------------------
+img { vertical-align: middle; }
+
+/* _width hack is for IE */
+img { max-width: 90%; _width: 90%; display: block; margin: 0 auto;
+    @media only screen and (max-width: $breakpoint-mid) {
+    max-width: 95%; _width: 95%
     }
+}
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
 
-/*  ========================================================================== */
-/*  @group Font Stacks */
-/*  ========================================================================== */
-
-    body {
-        font-weight: $font-weight-light;
-        line-height: $base-lh/$base-fs;
-    }
-
-    /* Default font */
-    html, body, button, input, select, textarea { font-family: $font-family-default; }
-
-    /* Display font */
-    h1, h2, h3, h4 {
-        font-family: $font-family-display;
-        font-style: normal;
-        font-weight: $font-weight-light;
-    }
-
-    /* Alternate font */
-    blockquote, figcaption, .font-family-serif { font-family: $font-family-serif;  }
-
-    /* Monospace font*/
-    pre, code, kbd, samp, .font-family-monospace { font-family: $font-family-monospace; }
-
-
-/*  ========================================================================== */
-/*  @group Typography */
-/*  ========================================================================== */
-
-
-        h1 { font-size: rs(32); margin: 0 0 rs(21,32) 0; }
-        h2 { font-size: rs(28); margin: rs(21,28) 0 0 0; }
-        h3 { font-size: rs(24); margin: rs(21,24) 0 0 0; }
-        h4 { font-size: rs(21); margin: rs(21,21) 0 0 0; }
-        p { font-size: rs(16); margin: rs(21,16) 0 0 0; }
-        ul, ol, dl { margin: rs($base-lh/2) 0 rs($base-lh/2) 0;}
-        ul, li, ol, dl { padding: 0; }
-        ul li {list-style: none; }
-
-    /*  @group Links */
-        a {
-            text-decoration: none;
-            word-wrap: break-word;
-        }
-
-        a:focus { outline: thin dotted; }
-        a:hover, a:active { outline: 0; }
-
-        a {
-            color: $color-link-default;
-            @include transition();
-        }
-        a:visited {
-            color: $color-link-visited;
-        }
-        a:hover {
-            cursor: pointer;
-            color: $color-link-hover;
-        }
-        a:active {
-            color: $color-link-active;
-        }
-
-    /*  @group Text Level Elements */
-    /*  ========================================================================== */
-
-        /* Text Marking */
-        b, strong, mark { font-weight: bold; }
-        /* dfn, mark { font-style: italic; }
-        ins, mark {
-            color: invert($color-highlight);
-            background-color: $color-highlight;
-        }
-        ins { text-decoration: none; }
-        del { text-decoration: line-through; }
-
-        abbr[title], dfn[title] {
-            cursor: help;
-            border-bottom: 1px dotted; 
-        }
-
-        // Position subscript and superscript content without affecting line-height: h5bp.com/k
-        sub, sup {
-            font-size: 75%;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline;
-        }
-        sup { top: -0.5em; }
-        sub { bottom: -0.25em; }*/
-
-        /*
-         * A better looking default horizontal rule
-         
-        hr {
-            display: block;
-            height: 1px;
-            border: 0;
-            border-top: 1px solid $color-muted;
-            margin: rs($base-lh/2) 0;
-            padding: 0;
-        }*/
-
-        /*
-         * Remove text-shadow in selection highlight: h5bp.com/i
-         * These selection rule sets have to be separate.
-         * Customize the background color to match your design.
-         */
-        ::-moz-selection {
-            background: $color-selection;
-            text-shadow: none;
-        }
-        ::selection {
-            background: $color-selection;
-            text-shadow: none;
-        }
-
-
-    /*  @group Embedded Content */
-    /*  ========================================================================== */
-
-        img { vertical-align: middle; }
-
-        /* _width hack is for IE6 */
-        img, embed, object, video { max-width: 90%; _width: 90%; display: block; margin: 0 auto;
-            @media only screen and (max-width: $breakpoint-mid) {
-            max-width: 95%; _width: 95%
-            }
-        }
-        img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-
-        /* Correct overflow displayed oddly in IE9 */
-        svg:not(:root) { overflow: hidden; }
-
-    /*  @group Figures */
-    /*  ========================================================================== */
-
-        figure { margin: 0; }
-
-    /*  @group Quotes */
-    /*  ========================================================================== */
-
-        q { quotes: none; }
-        q:before, q:after { content: ""; content: none; }
-        q, cite, blockquote { font-style: italic; }
-
-    /*  @group Code */
-    /*  ========================================================================== */
-
-        pre {
-            white-space: pre;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        code  {
-            @include font-size( 15 );
-            padding: 0 .3em;
-        }
-        pre, .code {
-            @include font-size( 14 );
-            @include dotty-background();
-            color: $color-pre;
-            line-height: 1.5;
-            margin-bottom: rs($base-lh/2);
-            padding: rs($base-lh/2) rs($base-lh);
-        }
-        pre code, .code code {
-            background-color: transparent;
-            border: none;
-            padding: 0;
-        }
-        .code li {
-            list-style-type: decimal-leading-zero;
-        }
-
-/*  ========================================================================== */
-/*  @group Tables */
-/*  ========================================================================== */
-
-    table { border-collapse: collapse; border-spacing: 0; }
-    td { vertical-align: top; }
-
-/*  ========================================================================== */
-/*  @group Forms */
-/*  ========================================================================== */
-
-    // Remove default fieldset styles.
-    fieldset {
-        border: 0;
-        margin: 0;
-        padding: 0;
-    }
-
-    // Allow only vertical resizing of textareas.
-    textarea {
-        resize: vertical;
-    }
