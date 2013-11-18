@@ -236,9 +236,9 @@ activate :syntax
 ```
 [RubyGem](http://rubygems.org/gems/middleman-syntax) / [Github](https://github.com/middleman/middleman-syntax)
  
-### 11. Middleman::Autoprefixerで適切なベンダープリフィクスを付与
-Autoprefixerは[Can I use...](http://caniuse.com/)のデータをもとに、ベンダープリフィクスを書き出したり、不要なものを削除してくれるポストプロセッサです。CompassのMixinとは違い、必要なバージョンをだけを判定し、自動で最新の状態に保つことができます。ソースコードはすっきりするし、メンテナンスの必要がないのでかなりおすすめです！  
-```Gemfile```に以下を記述 → ターミナルからインストール → ```config.rb```にサポート対象ブラウザをオプションで指定することもできます。以下の例は最新の2バージョンとie9がサポート対象。
+### 11. Middleman::Autoprefixerでベンダープリフィクスを自動で削減
+Autoprefixerは[Can I use...](http://caniuse.com/)のデータをもとに、ベンダープリフィクスを付与したり、不要なものを削除してくれる「ポストプロセッサ」です。CompassのMixinなどプリプロセッサとは違うアプローチで、必要なバージョンをだけを判定し、自動で最新の状態に保つことができます。ソースコードはすっきりするし、メンテナンスの必要がないのでかなりおすすめです！  
+```Gemfile```に以下を記述 → ターミナルからインストール → ```config.rb```にサポート対象ブラウザをオプションで指定することもできます。以下の例は最新の2バージョンとIE9がサポート対象。
 
 ```sh
 $ gem "middleman-autoprefixer", "~> 0.2.3"
@@ -247,7 +247,9 @@ $ gem "middleman-autoprefixer", "~> 0.2.3"
 activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
 ```
 
-[RubyGem](http://rubygems.org/gems/middleman-autoprefixer) / [Github](https://github.com/porada/middleman-autoprefixer)
+[RubyGem](http://rubygems.org/gems/middleman-autoprefixer) / [Github](https://github.com/porada/middleman-autoprefixer)  
+
+Autoprefixerは[Grunt](https://github.com/nDmitry/grunt-autoprefixer)のタスクにもあるみたい。こういったポストプロセッサって他にもあるのかな？注目したい。
 
 ### 12. minify、gzipでパフォーマンスの最適化
 minify、gzipはビルド時に実行される機能で、```config.rb```の下のほうにある```build```メソッドのブロック内のコメントを解除するだけで有効になります。  
