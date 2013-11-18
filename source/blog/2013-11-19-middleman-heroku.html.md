@@ -31,7 +31,7 @@ Herokuに独自ドメインを割り当て```rochas.herokuapp.com```にアクセ
 
 
 では実際にどのようにつくったかを少しご紹介したいと思います。  
-環境: Ruby2.0.0以上、bundler
+開発には Ruby 2.0.0〜、[bundler](http://bundler.io/)を使っています。
 
 
 ### 2. Middlemanをインストール
