@@ -236,8 +236,9 @@ activate :syntax
 ```
 [RubyGem](http://rubygems.org/gems/middleman-syntax) / [Github](https://github.com/middleman/middleman-syntax)
  
-### 11. Middleman::Autoprefixerでベンダープリフィクスを自動で削減
-Autoprefixerは[Can I use...](http://caniuse.com/)のデータをもとに、ベンダープリフィクスを付与したり、不要なものを削除してくれる「ポストプロセッサ」です。CompassのMixinなどプリプロセッサとは違うアプローチで、必要なバージョンをだけを判定し、自動で最新の状態に保つことができます。ソースコードはすっきりするし、メンテナンスの必要がないのでかなりおすすめです！  
+### 11. Middleman::Autoprefixerで適切なベンダープリフィクスを付与
+Autoprefixerは[Can I use...](http://caniuse.com/)のデータをもとに、必要なベンダープリフィクスを付与したり、不要なものを削除してくれる「ポストプロセッサ」です。  
+CompassのMixinなどプリプロセッサとは違うアプローチで、[Grunt](https://github.com/nDmitry/grunt-autoprefixer)のタスクにもあります。  
 ```Gemfile```に以下を記述 → ターミナルからインストール → ```config.rb```にサポート対象ブラウザをオプションで指定することもできます。以下の例は最新の2バージョンとIE9がサポート対象。
 
 ```sh
@@ -249,8 +250,6 @@ activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
 
 [RubyGem](http://rubygems.org/gems/middleman-autoprefixer) / [Github](https://github.com/porada/middleman-autoprefixer)  
 
-Autoprefixerは[Grunt](https://github.com/nDmitry/grunt-autoprefixer)のタスクにもあるみたい。こういったポストプロセッサって他にもあるのかな？注目したい。
-
 ### 12. minify、gzipでパフォーマンスの最適化
 minify、gzipはビルド時に実行される機能で、```config.rb```の下のほうにある```build```メソッドのブロック内のコメントを解除するだけで有効になります。  
 
@@ -259,22 +258,16 @@ activate :minify_javascript
 activate :minify_css
 activate :gzip
 ```
-こうしたビルドツールが簡単に使えるのはMiddlemanの強み❤  
 
 ### 13. ビルドする
 ```sh
 $ bundle exec middleman build
 ```
-ターミナルから```build```コマンドを実行すると、ルートディレクトリにbuildフォルダが生成されます。中身は```index.html.gz```という拡張子のついた、gzip化された静的ファイルであることが確認できると思います。完成したらこのフォルダをデプロイすればよいのです！
+ターミナルから```build```コマンドを実行すると、ルートディレクトリにbuildフォルダが生成されます。中身は```index.html.gz```という拡張子のついた、gzip化された静的ファイルであることが確認できると思います。完成後はこのフォルダをデプロイします。
 
 
 ### 14. Middlemanそして#p4d   
-今回はGemで機能を追加するまでを書きましたが、この後はテンプレートを編集し、デプロイ環境をつくっていきました。  
-[たのしいRuby](http://www.amazon.co.jp/%E3%81%9F%E3%81%AE%E3%81%97%E3%81%84Ruby-%E7%AC%AC3%E7%89%88-%E9%AB%98%E6%A9%8B-%E5%BE%81%E7%BE%A9/dp/4797357401)を読んでみたり、Rails情報を検索してみたり。。まだまだMiddlemanの情報が少ないせいもあるけど、独自ドメインを取ったあたりから、結構はまってしまいました。  
-
-なのでブログを公開できたのは[#p4d](http://prog4designer.github.io/)の存在が大きかった。気持ち的にも。  
-オーガナイザーの[@satococoa](https://twitter.com/satococoa)さん、[@tatsuoSakurai](https://twitter.com/tatsuoSakurai)さん、[@tkawa](https://twitter.com/tkawa)さん、[Fuchiwaki](https://www.facebook.com/daisuke.fuchiwaki)さんがコーチになってくださり、ソースコードをRails風にリファクタリングしたり、Gitを使ったHerokuへのデプロイ、rackベースのサーバーのリダイレクトなど色々なことを学ばせていただきました。  
-これらはMiddlemanに限ったことではなく、RailsのViewにデザインを入れることを学びたい私にとって大変貴重な経験となりました。またワークフローの見直しにもなり、よりよい環境でデザインやコードを書けることの楽しさを知りました。本当にありがとうございます！  
+[#p4d](http://prog4designer.github.io/)の[@satococoa](https://twitter.com/satococoa)さん、[@tatsuoSakurai](https://twitter.com/tatsuoSakurai)さん、[@tkawa](https://twitter.com/tkawa)さん、[Fuchiwaki](https://www.facebook.com/daisuke.fuchiwaki) には色々なことを学ばせていただきました。本当にありがとうございます！  
 [Tokyo Middleman Meetup #1](http://connpass.com/event/3851/)にも参加します。Middlemanの公式サイトやSlimドキュメントを翻訳してくださった[@yterajima](https://twitter.com/yterajima)を始め、先駆者の方々が登壇されるとのことで今から楽しみ！  
 
 
