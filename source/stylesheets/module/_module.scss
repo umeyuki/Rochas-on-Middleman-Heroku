@@ -129,22 +129,12 @@ i.icon-rss, .nav-link-rss a:hover {
         padding-left: 2em;
         li {
             padding-right: .7em;
+            @media only screen and (max-width: $breakpoint-narrow) {
+                padding-right: 0;
+            }
         }
     }
-    a {
-        color: $color-2;
-        @include transition();
-    }
-    a:visited {
-        color: $color-2;
-    }
-    a:hover {
-        cursor: pointer;
-        color: $color-link-hover;
-    }
-    a:active {
-        color: $color-link-active;
-    }
+
 }
 .note {
     font-style: italic;

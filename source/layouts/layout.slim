@@ -9,8 +9,16 @@ html lang="ja-JP"
             = link_to data.site.url, rel:"home"
               .logo-background
           h1.logo-sign ROCHAS
-        .description
-          p= data.site.description
+        nav.nav-global [role="navigation"]
+          ul
+            li
+              =link_to "Home", data.site.url
+            li
+              =link_to "Archive", "/blog/" 
+            li
+              =link_to "Style Guide", "/styleguide/" 
+            li
+              =link_to "Feed", "/feed.xml" 
       .content
         section
           div[role="main"]
