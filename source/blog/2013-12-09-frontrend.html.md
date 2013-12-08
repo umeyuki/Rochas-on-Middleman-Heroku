@@ -97,13 +97,13 @@ Chrome Dev ToolsのTimelineで検証してみると、ローディングが進�
 
 * Chrome Dev Tools > Setting > General > にはPaintを可視化する便利な機能があります。最近Canaryは挙動がかわり、chrome://flagsで設定するようになった模様。
  * Show paint rectangles ─ Paintの発生箇所を赤い線で表示。  
- * Enable continues page repaintin ─ ペイントタイム(ms)をヒストグラムで計測。  
+ * Enable continues page repainting ─ ペイントタイム(ms)をヒストグラムで計測。  
  * Show composite layer borders ─ Compositeされているレイヤーをオレンジの線で表示。 
 
 
 <h3 id="lesson4">2. Chrome Dev Toolsを使ったループ処理のデバッグ</h3>
 では実際にChrome Dev ToolsのCanaryで、[Demo](http://jsbin.com/oNiVUYe/3/quiet)を使ってJake氏のデバッグを再現してみます。  
-緑色のボックスをリサイズすると、それに追随してテキストの```width```も変わる仕組になっています。  
+緑色のボックスをリサイズすると、追随してテキストの```width```も変わる仕組になっています。  
 これをTimelineパネルから検証するとScriptingとLayoutが多発していることがわかります。
 
 ![Timeline Panel](images/frontrend2.jpg)  
@@ -141,13 +141,17 @@ var greenBlockWidth = sizer.offsetWidth;
 しかしモバイルでは、タップしてからイベント発生までに300msの遅延が生じます。その理由はシングルタップなのかダブルタップなのかを判定するため300msの```delay```が指定されているからです。  
 
 Click Eventではなくて Touch Events (```touchstart```/```touchend```) を使えばイベントの発生と実行が同期され、300msの遅延を防ぐことができます。しかしModern IEはTouch Eventsに対応していないため、Pointer Eventsを使わなければなりません。  
+<ul class="note">
+ <li><a href="https://developers.google.com/mobile/articles/fast_buttons">Creating Fast Buttons for Mobile Web Applications - Google Developers</a></li>
+ <li><a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx">touch-action property - Dev Center - Windows Store apps</a></li>
+</ul>
 
-Chrome for Android、Firefox for Android32からはviewportに```user-scalable=no```または```minimum-scale=1, maximum-scale=1```で拡大禁止にすることで300msの遅延を防げるようになりました。   
+[Chrome for Android 32](https://bugs.webkit.org/show_bug.cgi?id=122212)、[Firefox for Android 11](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)ではviewportに```user-scalable=no```または```minimum-scale=1, maximum-scale=1```で拡大禁止にすることで300msの遅延を防げるようになりました。   
 
 <a href="http://patrickhlauke.github.io/touch/tests/event-listener_user-scalable-no.html">![remove 300ms delayl](images/frontrend4.jpg)</a>
   
 
-こちらは[Webkit Bugzilla](https://bugs.webkit.org/show_bug.cgi?id=122212) が行なった[テスト](http://patrickhlauke.github.io/touch/tests/event-listener_user-scalable-no.html)ですが、依然iOS Safari、Androidは対応していませんし、Modern IEの場合は```-ms-touch-action: none```といったように処理を分けなければなりません。  
+こちらは[Webkit Bugzilla](http://patrickhlauke.github.io/touch/tests/event-listener_user-scalable-no.html)が行なったテストですが、依然iOS Safari、Androidは対応していませんし、Modern IEの場合は```-ms-touch-action: none```といったように処理を分けなければなりません。  
 マルチデバイス対応に関しては[FastClick](https://github.com/ftlabs/fastclick)などpolyfillを使うという選択肢もありますが、ダブルタップやピンチによる拡大ができなくなる点は解決しません。  
 300msの遅延回避することで逆にアクセサビリティが損なわれてしまわないか、よく検討する必要があります。  
 
@@ -274,15 +278,14 @@ TranslateZ Hackはアニメーション要素だけに限定し、Chrome Dev Too
 
 
 <h3 id="lesson13">6. まとめ</h3>
-* LayoutやPaintの多発はレンダリングパフォーマンスにダメージを与える。
+* LayoutやPaintの多発はパフォーマンスにダメージを与える。
 * LayoutのトリガーとなるJavaScriptを探そう。
-* Paintコストの高いCSSプロパティによる過剰な装飾はやめよう。
-* FPSは常に16.67msを維持しよう。
+* Paintの発生源をShow paint rectanglesやEnable continues page repaintingで探そう。
+* フレームレートはFPS meterで常に16.67msを維持しよう。
 * GPUレンダリングを使ってCPUメモリを解放しよう。
 * JSベースのアニメーションは```setTimeout```や```setInterval```ではなく```requestAnimationFrame```を使おう。
 * CSSアニメーションは```@keyframes top/left```より```@keyframes transform```がスムーズ。
 * TranslateZ Hackは用法用量を守りましょう。
-* 以上Tipsは大事だけれども、継続的にTestを繰り返すことが最も大切。 
 
 
 > ルールよりツール。─ Addy Osmani  
@@ -291,8 +294,9 @@ TranslateZ Hackはアニメーション要素だけに限定し、Chrome Dev Too
 
 > 目指すところは、フレームレート60FPS以内、サーバーレスポンス200ms以内、ページインデックス1000ms以内。 ─ Paul Irish  
 
+Tipsは大事だけれども、継続的にTestを繰り返すことが最も大切。永久的なベストプラクティスなどなく、常に追い求める勇気と努力を惜しんではいけないということを学びました。  
 
-最後に。。このイベントを支えてくださったみなさま、本当にありがとうございました。Google Teamとサイバーエージェントのスピーカーの方々がお互いリスペクトし合っているのがとても印象に残っています。    
+最後になりましたが、このイベントを支えてくださったみなさま、ありがとうございました。Google Teamとサイバーエージェントのスピーカーの方々がお互いリスペクトし合っているのがとても印象に残っています。参加できて本当によかったです。    
 それでは明日は[tomofさん](http://www.adventar.org/calendars/62)。 よろしくお願いいたします。
 
 <section class="note">
