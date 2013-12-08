@@ -300,8 +300,8 @@ Tipsは大事だけれども、継続的にTestを繰り返すことが最も大
 ### 参考
 
 <ul class="note">
-  <li><a href="http://dresscording.com/blog/performance/layout_painting.html"></a>Layout、Paintingとは何か？レンダリングから学ぶWebサイトのパフォーマンス - Dress Cording</li>
-  <li><a href="https://speakerdeck.com/addyosmani/velocityconf-rendering-performance-case-studies"></a>VelocityConf: Rendering Performance Case Studies - Speaker Deck</li>
+  <li><a href="http://dresscording.com/blog/performance/layout_painting.html">Layout、Paintingとは何か？レンダリングから学ぶWebサイトのパフォーマンス - Dress Cording</a></li>
+  <li><a href="https://speakerdeck.com/addyosmani/velocityconf-rendering-performance-case-studies">VelocityConf: Rendering Performance Case Studies - Speaker Deck</a></li>
   <li><a href="http://www.html5rocks.com/en/mobile/touchandmouse/">Touch And Mouse Together Again For The First Time - HTML5 Rocks</a></li>
   <li><a href="http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">Why Moving Elements With Translate() Is Better Than Pos:abs Top/left - Paul Ilish</a></li>
   <li><a href="http://www.html5rocks.com/ja/tutorials/speed/layers/">Accelerated Rendering in Chrome: The Layer Model - HTML5 Rocks</a></li>
