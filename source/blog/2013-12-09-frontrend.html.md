@@ -34,7 +34,7 @@ Chrome Developer Teamから学んだ中から特に心に残ったところを�
  * [CPU vs GPU](#lesson8)
  * [requestFramaAnimation vs CSS transform](#lesson9)
  * [@keyframes top/left vs @keyframes transform](#lesson10)
-5. [TranslateZ Hackとは何か](#lesson11)
+5. [TranslateZ Hack](#lesson11)
  * [TranslateZ Hackでスクロールパフォーマンスを改善する](#lesson12)
 6. [まとめ](#lesson13)
 
@@ -160,7 +160,7 @@ Click Eventではなくて Touch Events (```touchstart```/```touchend```) を使
 
 従来の```setTimeout```や```setInterval```の場合、フレームレートを一定に保つことが難しく、アニメーションがガタガタしやすい。
 一方```requestAnimationFrame```は、60FPSを振り切らないよう考慮されており、またタブがアクティブでない場合は、実行回数が自動的に低下しCPUの負荷を抑えることができます。    
-JavaScriptベースのアニメーション、canvas、WebGL、SVGで有効です。  
+JavaScriptベースのアニメーション、Canvas、WebGL、SVGで有効です。  
 ただしIE9以下、Androidは非対応なのでsetTimeoutによるフォールバックと、ベンダープリフィクスが必要です。  
 
 ```
@@ -193,11 +193,11 @@ Flash, Silverlight
 Canvas  
 Video  
 
-また```Transform```と```opacity```に関しては、Chrome、Firefox、Safari、Opera、(IE11は条件が違うかも)でハードウェアレンダリングが可能です。  
+また```transform```と```opacity```に関しては、Chrome、Firefox、Safari、Opera、(IE11は条件が違うかも)でハードウェアレンダリングが可能です。  
 
 <h4 id="lesson9">requestFramaAnimation vs CSS transform</h4>
-JSベースのアニメーションsetTimeoutや```setInterval```、```requestAnimationFrame```でさえ、CPUレンダリングで処理されるため、負荷がかかってしまうケースがあります。  
-一方TransformやOpacityを伴うCSSアニメーションは、レイヤーが分割され(Composite)、GPUレンダリングで処理されるため、Paintの発生を押さえることができます。  
+JSベースのアニメーションは```requestAnimationFrame```でさえ、CPUレンダリングで処理されるため、負荷がかかってしまうケースがあります。  
+一方```transform```や```Opacity```を伴うCSSアニメーションは、レイヤーが分割され(Composite)、GPUレンダリングで処理されるため、Paintの発生を押さえることができます。  
 
 ```scale → transform: scale(n)```  
 ```move → transform translateX(npx)```  
@@ -217,7 +217,7 @@ JSベースのアニメーションsetTimeoutや```setInterval```、```requestAn
 
 GPU対応は今のところCSSアニメーションのほうが進んでいるけれども、JSにしかできない表現もあるし、canvas、WebGLやSVGなど、アニメーションを実装する方法は色々ありますので、特徴を抑えておきたいですね。
 
-<h3 id="lesson11">5. TranslateZ Hackとは何か</h3>
+<h3 id="lesson11">5. TranslateZ Hack</h3>
 TranslateZ HackとはGPUレンダリングを利用したハックです。  
 ```-webkit-transform: translateZ(0);```または```-webkit-transform: translate3d(0,0,0);```を指定すると、レイヤーがCompositeされ、Chrrome上でハードウェアレンダリングモードに切り替わり、パフォーマンスが改善されるのです。
 JSベースや、CompositeされないCSSアニメーション(```transform```でない)に対して、半ば無理やりGPUレンダリングを実行しようという試みです。
