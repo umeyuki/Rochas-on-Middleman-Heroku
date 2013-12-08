@@ -2,7 +2,7 @@
 title: Chrome Developer Teamから学ぶサイトパフォーマンス
 date: 2013-12-09
 tags: Performance, Chrome Dev Tools
-description: 
+description: Frontrend x Chrome Tech Talk Night Extendedに参加し、Addy氏、Jake氏、Paul氏のセッションの感動を、Frontrend Advent Calender 2013に残します。
 image: "http://rochas.cc/images/frontrend1.gif"
 ---
 
@@ -11,8 +11,6 @@ image: "http://rochas.cc/images/frontrend1.gif"
 昨今のモバイリズムの中、ユーザーの85％がデスクトップと同等かそれ以上にモバイルでの高速化を求め、57%以上がロードに3秒以上かかるサイトからは離脱してしまうとの[統計結果](http://www.strangeloopnetworks.com/web-performance-infographics/)が示すように、私達は様々なデバイスやアクセス環境でのテストが必要になりました。  
 これらの問題をより早い段階で効率良く解決していくにはどうしたらいいのでしょうか。  
 
-<section class="note">
-
  * The Mobile Web Development Workflow ─ Addy Osmani  
 [Vimeo](http://vimeo.com/78326642) / [Speaker Deck](https://speakerdeck.com/addyosmani/mobile-web-development-workflow)  
 
@@ -20,13 +18,11 @@ image: "http://rochas.cc/images/frontrend1.gif"
 [Vimeo](http://vimeo.com/78330147) / [Speaker Deck](https://speakerdeck.com/jaffathecake/rendering-without-lumps)  
 
  * Mobile Web Developer Tools & Performance ─ Paul Irish  
-[Vimeo](http://vimeo.com/78331559) / [Google Drive](https://docs.google.com/presentation/d/1LEk6KoNk8-yL-Ge-y3mw4pV-Z9J8wjMXX_E77Rwq1rw/pub?start=false&loop=false&delayms=3000#slide=id.p)  
-</section>
+[Vimeo](http://vimeo.com/78331559) / [Google Drive](https://docs.google.com/presentation/d/1LEk6KoNk8-yL-Ge-y3mw4pV-Z9J8wjMXX_E77Rwq1rw/pub?start=false&amp;loop=false&amp;delayms=3000#slide=id.p)  
 
 Addy氏はモバイルサイト開発のためのツールやワークフローについて。Jake氏はレンダリングパフォーマンスについて。  Paul氏はChrome Dev ToolsのRemote Debuggingをライブで披露してくださいました。  
 Chrome Developer Teamから学んだ中から特に心に残ったところをまとめてみたいと思います。
 
-<section class="note">
 ### Agenda
 1. [レンダリングプロセス](#lesson1)
  * [Layout](#lesson2)
@@ -41,7 +37,6 @@ Chrome Developer Teamから学んだ中から特に心に残ったところを�
 5. [TranslateZ Hackとは何か](#lesson11)
  * [TranslateZ Hackでスクロールパフォーマンスを改善する](#lesson12)
 6. [まとめ](#lesson13)
-</section>
 
 <h3 id="lesson1">1. レンダリングプロセス</h3>
 ページがロードされてから、ドキュメント内のタグを解析し、Webページに表示するまでをレンダリングといいます。  
@@ -141,6 +136,7 @@ var greenBlockWidth = sizer.offsetWidth;
 しかしモバイルでは、タップしてからイベント発生までに300msの遅延が生じます。その理由はシングルタップなのかダブルタップなのかを判定するため300msの```delay```が指定されているからです。  
 
 Click Eventではなくて Touch Events (```touchstart```/```touchend```) を使えばイベントの発生と実行が同期され、300msの遅延を防ぐことができます。しかしModern IEはTouch Eventsに対応していないため、Pointer Eventsを使わなければなりません。  
+
 <ul class="note">
  <li><a href="https://developers.google.com/mobile/articles/fast_buttons">Creating Fast Buttons for Mobile Web Applications - Google Developers</a></li>
  <li><a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx">touch-action property - Dev Center - Windows Store apps</a></li>
@@ -183,7 +179,10 @@ window.requestAnimFrame = (function(){
 CPUレンダリングは1枚のスクリーン上で連続して処理を行うのに対し、
 GPUレンダリングは描画処理を分割して並行処理を行うため負荷を分散させることができます。  
 このあたりの内部構造についてはginpei_jpさんが語ってくださっています。  
-<p class="note">[スムーズなアニメーションを実装するコツと仕組みを説明するよ。CPUとGPUを理解しハードウェアアクセラレーションを駆使するのだ！- Ginpen.com](http://ginpen.com/2013/12/06/hardware-acceleration/)</p>
+
+<ul class="note">
+  <li><a href="http://ginpen.com/2013/12/06/hardware-acceleration/">スムーズなアニメーションを実装するコツと仕組みを説明するよ。CPUとGPUを理解しハードウェアアクセラレーションを駆使するのだ！- Ginpen.com</a></li>
+</ul>
 
 現在Chromeでは以下の条件下ではほとんどのOSでハードウェアレンダリングモードになり、より高速なグラフィクスアニメーションが可能となります。  
 [chrome://gpu/](chrome://gpu/)  から自分のOSでのハードウェアレンダリング対応が確認できます。
@@ -295,16 +294,16 @@ TranslateZ Hackはアニメーション要素だけに限定し、Chrome Dev Too
 > 目指すところは、フレームレート60FPS以内、サーバーレスポンス200ms以内、ページインデックス1000ms以内。 ─ Paul Irish  
 
 Tipsは大事だけれども、継続的にTestを繰り返すことが最も大切。永久的なベストプラクティスなどなく、常に追い求める勇気と努力を惜しんではいけないということを学びました。  
-
 最後になりましたが、このイベントを支えてくださったみなさま、ありがとうございました。Google Teamとサイバーエージェントのスピーカーの方々がお互いリスペクトし合っているのがとても印象に残っています。参加できて本当によかったです。    
 それでは明日は[tomofさん](http://www.adventar.org/calendars/62)。 よろしくお願いいたします。
 
-<section class="note">
 ### 参考
- * [Layout、Paintingとは何か？レンダリングから学ぶWebサイトのパフォーマンス - Dress Cording](http://dresscording.com/blog/performance/layout_painting.html)
- * [VelocityConf: Rendering Performance Case Studies // Speaker Deck] (https://speakerdeck.com/addyosmani/velocityconf-rendering-performance-case-studies)
- * [Touch And Mouse Together Again For The First Time - HTML5 Rocks](http://www.html5rocks.com/en/mobile/touchandmouse/)
- * [Why Moving Elements With Translate() Is Better Than Pos:abs Top/left - Paul Ilish](http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/)
- * [Accelerated Rendering in Chrome: The Layer Model - HTML5 Rocks](http://www.html5rocks.com/ja/tutorials/speed/layers/)
- * [On translate3d and layer creation hacks - Aerotwist](http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/)
-</section>
+
+<ul class="note">
+  <li><a href="http://dresscording.com/blog/performance/layout_painting.html"></a>Layout、Paintingとは何か？レンダリングから学ぶWebサイトのパフォーマンス - Dress Cording</li>
+  <li><a href="https://speakerdeck.com/addyosmani/velocityconf-rendering-performance-case-studies"></a>VelocityConf: Rendering Performance Case Studies - Speaker Deck</li>
+  <li><a href="http://www.html5rocks.com/en/mobile/touchandmouse/">Touch And Mouse Together Again For The First Time - HTML5 Rocks</a></li>
+  <li><a href="http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">Why Moving Elements With Translate() Is Better Than Pos:abs Top/left - Paul Ilish</a></li>
+  <li><a href="http://www.html5rocks.com/ja/tutorials/speed/layers/">Accelerated Rendering in Chrome: The Layer Model - HTML5 Rocks</a></li>
+  <li><a href="http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/">On translate3d and layer creation hacks - Aerotwist</a></li>
+</ul>
