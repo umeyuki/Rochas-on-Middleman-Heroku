@@ -6,7 +6,13 @@ title: "Style Guide - "
 .styleguide-body 
   h2 Style Guide
   p
-  | このブログは、読むことと書くことに集中できるようにシンプルに仕上げました。Ruby製のサイトジェネレータMiddlemanでつくった静的ファイルをgzip化し、Herokuにアップしています。 テンプレートはSlim、記事はMarkdownで書き、スタイルにはSassを使っています。
+  | このブログは、
+  a href="http://dresscording.com/blog/" Dress Cording
+  | のセカンドブログとして、読みやすさと書きやすさを目的にシンプルに仕上げました。
+  p
+  | Ruby製のサイトジェネレータMiddlemanでつくった静的ファイルをgzip化し、Herokuにアップしています。 テンプレートはSlim、記事はMarkdownで書き、スタイルにはSassを使っています。
+  p = link_to "Middleman + Slim + Herokuでブログをつくりました", "http://rochas.cc/blog/2013/11/19/middleman-heroku.html"
+
   section.clearfix
     h3 Brand Colors
     ul.swatches
@@ -63,8 +69,8 @@ title: "Style Guide - "
   section.clearfix
     h3 Design Concept
     p レイアウトは1columnのFluid Layoutで、左右にマージンをたっぷりめにとりました。
-    p Media Queriesでスマートフォンに対応していますが、なるべくリフローを抑えるために、breakpointでスタイルを切り分けたりはせず、viewportだけを指定しています。
-    p 配色はテキストカラーに墨黒と黒のあいだの黒、背景カラーには限りなく白に近い白を選びました。アクセントとしてリンクカラーとセレクトカラーにブルーを系を使っていますがほとんど出てきませんね。これは配色の理論というよりは感覚による部分が多く。。つくりながら何回も色を変えて、最終的に選んだ色です。なので柔軟に変更できるようにSassの変数で管理しています。
+    p Media Queriesでスマートフォンに対応していますが、breakpointは設けておらず、viewportだけを指定しています。
+    p 配色はテキストカラーに墨黒と黒のあいだの黒、背景カラーには限りなく白に近い白を選びました。アクセントとしてリンクカラーとセレクトカラーにブルーを系を使っていますがほとんど出てきませんね。カラーは柔軟に変更できるようにSassの変数で管理しています。
     p 文字組にはVertical RhythmをSassで計算しているのですが、日本語なので文字がパツパツになってしまったり、タイトルなどfont-sizeが大きい文字が改行されるとline-heightの間隔が空きすぎてしまいうまくいかない。なのでVertical Rhythmを少し調整してみました。
     p 元々Vertical RhythmはDTPの技術であり、それをWebのスタイルシートで表現しようと、様々な研究がなされてきました。
     ul

@@ -108,7 +108,6 @@ article {
 .nav-link {
     line-height: 2.2em;
     list-style: n1;
-    margin-top: 1.5em;
     margin-left: -0.4em;
     i {
         padding-right: .3em;
@@ -143,6 +142,12 @@ i.icon-rss, .nav-link-rss a:hover {
 .copy {
     margin-bottom: 0;
     line-height: 2.6em;
+    a {
+        color: $color-2;
+        &:hover {
+            color: $color-3;
+        }
+    }
 }
 
 

@@ -223,7 +223,7 @@ JSベースや、CompositeされないCSSアニメーション(```transform```�
 ここでまた[Demo](http://jsbin.com/oNiVUYe/3/quiet)を使ってPaul氏のデバッグを再現してみます。  
 body全体に背景画像を固定した```position: fixed```なレイアウトは、Documentルートから画像が再配置されるため、LayoutとPaintの両方が発生します。 実際スクロールをするとバグる時があり、とくにモバイルだと事態は深刻です。これをTranslateZ Hackで改善してみます。  
 
-![TranslateZ Hack](images/frontrend6.jpg)  
+![TranslateZ Hack](images/frontrend7.jpg)  
 
 Bad  
 
