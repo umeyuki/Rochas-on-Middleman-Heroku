@@ -140,11 +140,11 @@ blockquote:before {
 img { vertical-align: middle; }
 
 /* _width hack is for IE */
-img, iframe { max-width: 95%; _width: 95%; display: block; margin: 1.5em auto;
-    @media only screen and (max-width: $breakpoint-mid) {
-    max-width: 95%; _width: 95%
-    }
-}
+img { max-width: 90%; _width: 90%; display: block; margin: 1.5em auto; }
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+@media only screen and (max-width: $breakpoint-mid) {
+    img, iframe { max-width: 100%; _width: 100%; }
+}
 
 
