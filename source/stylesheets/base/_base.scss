@@ -117,7 +117,22 @@ pre code, .code code {
 // -------------------------
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
-q, cite, blockquote { font-style: italic; }
+q, cite, blockquote { 
+    font-style: italic;
+    font-size: 85%;
+    margin: -6em 3em 3em;
+}
+
+blockquote:before {
+    position: relative;
+    top: 70px;
+    left: -40px;
+    display: block;
+    color: lighten( $color-1, 70% );
+    content: "\201C";
+    font-size: 65px;
+    font-family: serif;
+}
 
 
 // Img Style
