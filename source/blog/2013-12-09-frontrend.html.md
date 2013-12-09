@@ -205,15 +205,16 @@ JSベースのアニメーションは```requestAnimationFrame```でさえ、CPU
 ```fade → opacity: 0..1```  
 
 <h4 id="lesson10">@keyframes top/left vs @keyframes transform</h4>
-ただしCSSアニメーションが全て速いというのは早とちりで、top/leftを使ったキーフレームアニメーションではLayoutが発生し、ガタガタになってしまいます。 同じ```@keyframes```でも```transforｍ```を使うとスムーズになります。  Demoは-webkit-のみベンダープリフィクス付き。
+ただしCSSアニメーションが全て速いというのは早とちりで、top/leftを使ったキーフレームアニメーションではLayoutが発生し、ガタガタになってしまいます。 同じ```@keyframes```でも```transforｍ```を使うとスムーズになります。  Demoは-webkit-のみベンダープリフィクス付き。  
 
-<a class="jsbin-embed" href="http://jsbin.com/ESAKuwuk/1/embed?css,output">@keyframes top/left</a><script src="http://static.jsbin.com/js/embed.js"></script>  
-
-<a class="jsbin-embed" href="http://jsbin.com/uxAjeNAt/1/embed?css,output">@keyframes transform</a><script src="http://static.jsbin.com/js/embed.js"></script>  
+* [@keyframes top/left - JS Bin](http://jsbin.com/OqudESE/1/edit?css,output)
+* [@keyframes transform - JS Bin](http://jsbin.com/uxAjeNAt/1/edit?css,output)
 
 違いがわかりにくいかもしれないが計測してみると一目瞭然。```@keyframes transform```はPaintタイムが0ms。オレンジの線のところでレイヤーがCompositeされ、GPUレンダリングになっています！  
 
-![Keyframes Amnimation](images/frontrend6.gif)  
+<a href="http://jsbin.com/OqudESE/1/edit?css,output">![@keyframes top/left](images/frontrend6.jpg)</a>  
+
+<a href="http://jsbin.com/uxAjeNAt/1/edit?css,output">![@keyframes transform](images/frontrend7.jpg)</a>  
 
 GPU対応は今のところCSSアニメーションのほうが進んでいるけれども、JSにしかできない表現もあるし、canvas、WebGLやSVGなど、アニメーションを実装する方法は色々ありますので、特徴を抑えておきたいですね。
 
@@ -226,7 +227,7 @@ JSベースや、CompositeされないCSSアニメーション(```transform```�
 ここでまた[Demo](http://jsbin.com/oNiVUYe/3/quiet)を使ってPaul氏のデバッグを再現してみます。  
 body全体に背景画像を固定した```position: fixed```なレイアウトは、Documentルートから画像が再配置されるため、LayoutとPaintの両方が発生します。 実際スクロールをするとバグる時があり、とくにモバイルだと事態は深刻です。これをTranslateZ Hackで改善してみます。  
 
-![TranslateZ Hack](images/frontrend7.jpg)  
+![TranslateZ Hack](images/frontrend8.jpg)  
 
 Bad  
 
