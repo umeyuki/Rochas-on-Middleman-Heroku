@@ -1,6 +1,6 @@
 doctype html
 html lang="ja-JP"
-  = partial "header"
+  == partial "header"
   body
     .container
       header[role="banner"]
@@ -30,13 +30,13 @@ html lang="ja-JP"
                   - current_article.tags.each do |tag|
                     li = link_to tag, tag_path(tag)
               .article-body
-                = yield
-                = partial "share"
+                == yield
+                == partial "share"
                 - if paginate
                   - if next_page
                     p = link_to 'Next page', next_page
-          = partial "navigation"
-      = partial "footer"
+          == partial "navigation"
+      == partial "footer"
 
   / %ul.tags
   /   - tags.each do |tag|

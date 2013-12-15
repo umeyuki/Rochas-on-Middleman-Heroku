@@ -1,6 +1,6 @@
 doctype html
 html lang="ja-JP"
-  = partial "header"
+  == partial "header"
   body class=[page_classes]
     .container
       header.header[role="banner"]
@@ -22,9 +22,9 @@ html lang="ja-JP"
       .content
         section
           div[role="main"]
-            = yield
-          = partial "navigation"
-      = partial "footer"
+            == yield
+          == partial "navigation"
+      == partial "footer"
 
     
 
