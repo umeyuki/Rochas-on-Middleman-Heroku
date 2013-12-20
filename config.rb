@@ -42,7 +42,7 @@ Slim::Engine.set_default_options :shortcut => {
 
 # Markdown 
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown, :fenced_code_blocks => true, :smartypants => true, :tables => true
 
 # LiveReload
 activate :livereload
